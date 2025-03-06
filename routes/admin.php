@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\BannerFeatureController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DiplomaEngineeringCourseController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
@@ -41,3 +42,6 @@ Route::resource('event', EventController::class);
 
 /** Teacher Routes */
 Route::resource('teacher', TeacherController::class);
+
+/** Blog Routes */
+Route::resource('blog', BlogController::class);

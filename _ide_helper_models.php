@@ -42,6 +42,42 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $image
+ * @property int $user_id
+ * @property string $title
+ * @property string $slug
+ * @property string $category
+ * @property string $date
+ * @property string $short_description
+ * @property string $long_description
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereCategory($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereLongDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereShortDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Blog whereUserId($value)
+ */
+	class Blog extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $image
  * @property string $name
  * @property string $slug
  * @property string $month
@@ -225,7 +261,6 @@ namespace App\Models{
  * @property string $name
  * @property string $slug
  * @property string $designation
- * @property string $short_description
  * @property string|null $email
  * @property string|null $whatsapp
  * @property string|null $facebook_id_name
@@ -234,9 +269,10 @@ namespace App\Models{
  * @property string|null $linkedin_url
  * @property string|null $twitter_id_name
  * @property string|null $twitter_url
- * @property string|null $website
+ * @property string|null $website_url
  * @property string|null $address
  * @property string|null $address_url
+ * @property string $short_description
  * @property string $long_description
  * @property int $priority_number
  * @property int $status
@@ -265,7 +301,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Teacher whereTwitterIdName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Teacher whereTwitterUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Teacher whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Teacher whereWebsite($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Teacher whereWebsiteUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Teacher whereWhatsapp($value)
  */
 	class Teacher extends \Eloquent {}
