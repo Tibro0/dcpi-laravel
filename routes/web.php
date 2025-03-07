@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
 use App\Http\Controllers\Frontend\OurTeacherController;
 use App\Http\Controllers\Frontend\UpcomingEventController;
 use App\Http\Controllers\ProfileController;
@@ -36,5 +37,9 @@ Route::get('our-teacher/{slug}', [OurTeacherController::class, 'ourTeacherDetail
 /** Upcoming Event Route */
 Route::get('upcoming-event', [UpcomingEventController::class, 'index'])->name('upcoming-event.index');
 Route::get('upcoming-event/{slug}', [UpcomingEventController::class, 'upcomingEventDetails'])->name('upcoming-event.details');
+
+/** Diploma Engineering Course Route */
+Route::get('diploma-engineering-course', [OurDiplomaEngineeringCourseController::class, 'index'])->name('diploma-engineering-course.index');
+Route::get('diploma-engineering-course/{slug}', [OurDiplomaEngineeringCourseController::class, 'diplomaEngineeringCourseDetails'])->name('diploma-engineering-course.details');
 
 require __DIR__.'/auth.php';

@@ -25,13 +25,14 @@
                                 <li class="list-inline-item"><i
                                         class="ti-calendar mr-1 text-color"></i>{{ date('d-m-Y', strToTime($diplomaEngineeringCourse->created_at)) }}
                                 </li>
-                                {{-- <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li> --}}
                             </ul>
-                            <a href="course-single.html">
+                            <a
+                                href="{{ route('diploma-engineering-course.details', $diplomaEngineeringCourse->slug) }}">
                                 <h4 class="card-title">{{ $diplomaEngineeringCourse->name }}</h4>
                             </a>
                             <p class="card-text mb-4">{{ $diplomaEngineeringCourse->short_description }}</p>
-                            <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+                            <a href="{{ route('diploma-engineering-course.details', $diplomaEngineeringCourse->slug) }}"
+                                class="btn btn-primary btn-sm">Apply now</a>
                         </div>
                     </div>
                 </div>

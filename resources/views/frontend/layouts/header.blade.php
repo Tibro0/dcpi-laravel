@@ -59,7 +59,7 @@
                             <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="courses.html">COURSES</a>
+                            <a class="nav-link" href="{{ route('diploma-engineering-course.index') }}">COURSES</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('upcoming-event.index') }}">EVENTS</a>
