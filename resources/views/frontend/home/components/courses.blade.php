@@ -6,7 +6,8 @@
                     <h2 class="mb-0 text-nowrap mr-3">Our Diploma Engineering Course</h2>
                     <div class="border-top w-100 border-primary d-none d-sm-block"></div>
                     <div>
-                        <a href="courses.html" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see
+                        <a href="{{ route('diploma-engineering-course.index') }}"
+                            class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see
                             all</a>
                     </div>
                 </div>

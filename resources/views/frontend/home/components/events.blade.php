@@ -6,7 +6,8 @@
                     <h2 class="mb-0 text-nowrap mr-3">Upcoming Events</h2>
                     <div class="border-top w-100 border-primary d-none d-sm-block"></div>
                     <div>
-                        <a href="events.html" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see
+                        <a href="{{ route('upcoming-event.index') }}"
+                            class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see
                             all</a>
                     </div>
                 </div>
@@ -27,7 +28,7 @@
                             <!-- location -->
                             <p><i class="ti-location-pin text-primary mr-2"></i>{{ $event->location }}</p>
                             <a href="{{ route('upcoming-event.details', $event->slug) }}">
-                                <h4 class="card-title">{{ $event->name }}</h4>
+                                <h4 class="card-title">{{ limitText($event->name, 52) }}</h4>
                             </a>
                         </div>
                     </div>

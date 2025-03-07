@@ -20,11 +20,12 @@
                                 <!-- author -->
                                 <li class="list-inline-item mr-3 ml-0">By {{ $blog->user->name }}</li>
                             </ul>
-                            <a href="blog-single.html">
-                                <h4 class="card-title">{{ $blog->title }}</h4>
+                            <a href="{{ route('blog.details', $blog->slug) }}">
+                                <h4 class="card-title">{{ limitText($blog->title, 26) }}</h4>
                             </a>
                             <p class="card-text">{{ $blog->short_description }}</p>
-                            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+                            <a href="{{ route('blog.details', $blog->slug) }}" class="btn btn-primary btn-sm">read
+                                more</a>
                         </div>
                     </div>
                 </article>

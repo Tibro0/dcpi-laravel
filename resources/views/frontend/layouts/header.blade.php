@@ -52,22 +52,22 @@
 
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
-                        <li class="nav-item active">
+                        <li class="nav-item {{ setActive(['home']) }}">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item {{ setActive(['diploma-engineering-course.*']) }}">
                             <a class="nav-link" href="{{ route('diploma-engineering-course.index') }}">COURSES</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ setActive(['upcoming-event.*']) }}">
                             <a class="nav-link" href="{{ route('upcoming-event.index') }}">EVENTS</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">BLOG</a>
+                        <li class="nav-item {{ setActive(['blog.*']) }}">
+                            <a class="nav-link" href="{{ route('blog.index') }}">BLOG</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ setActive(['teacher.*']) }}">
                             <a class="nav-link" href="{{ route('teacher.index') }}">TEACHER</a>
                         </li>
                         {{-- <li class="nav-item dropdown view">

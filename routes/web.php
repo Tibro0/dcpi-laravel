@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
@@ -41,5 +42,9 @@ Route::get('upcoming-event/{slug}', [UpcomingEventController::class, 'upcomingEv
 /** Diploma Engineering Course Route */
 Route::get('diploma-engineering-course', [OurDiplomaEngineeringCourseController::class, 'index'])->name('diploma-engineering-course.index');
 Route::get('diploma-engineering-course/{slug}', [OurDiplomaEngineeringCourseController::class, 'diplomaEngineeringCourseDetails'])->name('diploma-engineering-course.details');
+
+/** Blog Route */
+Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.details');
 
 require __DIR__.'/auth.php';
