@@ -10,7 +10,7 @@
                     <div class="card border-0 rounded-0 hover-shadow">
                         <img class="card-img-top rounded-0" src="{{ asset($teacher->image) }}" alt="teacher">
                         <div class="card-body">
-                            <a href="teacher-single.html">
+                            <a href="{{ route('our-teacher.details', $teacher->slug) }}">
                                 <h4 class="card-title">{{ $teacher->name }}</h4>
                             </a>
                             <p>{{ $teacher->designation }}</p>

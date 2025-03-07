@@ -53,21 +53,24 @@
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="nav-item @@about">
+                        <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
-                        <li class="nav-item @@courses">
+                        <li class="nav-item ">
                             <a class="nav-link" href="courses.html">COURSES</a>
                         </li>
-                        <li class="nav-item @@events">
+                        <li class="nav-item">
                             <a class="nav-link" href="events.html">EVENTS</a>
                         </li>
-                        <li class="nav-item @@blog">
+                        <li class="nav-item">
                             <a class="nav-link" href="blog.html">BLOG</a>
                         </li>
-                        <li class="nav-item dropdown view">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('teacher.index') }}">TEACHER</a>
+                        </li>
+                        {{-- <li class="nav-item dropdown view">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Pages
@@ -83,9 +86,9 @@
                                 <a class="dropdown-item" href="event-single.html">Event Details</a>
                                 <a class="dropdown-item" href="blog-single.html">Blog Details</a>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item @@contact">
-                            <a class="nav-link" href="contact.html">CONTACT</a>
+                            <a class="nav-link" href="{{ route('contact.index') }}">CONTACT</a>
                         </li>
                     </ul>
                 </div>
