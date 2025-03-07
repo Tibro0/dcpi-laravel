@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OurTeacherController;
+use App\Http\Controllers\Frontend\UpcomingEventController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,8 +29,12 @@ Route::middleware('auth')->group(function () {
 /** Contact Route */
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 
-/** Contact Route */
+/** Teacher Route */
 Route::get('our-teacher', [OurTeacherController::class, 'index'])->name('teacher.index');
 Route::get('our-teacher/{slug}', [OurTeacherController::class, 'ourTeacherDetails'])->name('our-teacher.details');
+
+/** Upcoming Event Route */
+Route::get('upcoming-event', [UpcomingEventController::class, 'index'])->name('upcoming-event.index');
+Route::get('upcoming-event/{slug}', [UpcomingEventController::class, 'upcomingEventDetails'])->name('upcoming-event.details');
 
 require __DIR__.'/auth.php';

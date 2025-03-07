@@ -23,7 +23,7 @@ class FrontendController extends Controller
         $diplomaEngineeringCourses = DiplomaEngineeringCourse::orderBy('priority_number', 'asc')->where('status', 1)->get();
         $frontPageCtaSection = FrontPageCtaSection::first();
         $frontPageSuccessStorySection = FrontPageSuccessStorySection::first();
-        $events= Event::orderBy('priority_number', 'asc')->where('status', 1)->take(3)->get();
+        $events = Event::orderBy('priority_number', 'asc')->where('status', 1)->take(3)->get();
         $teachers = Teacher::orderBy('priority_number', 'asc')->where('status', 1)->take(3)->get();
         $blogs = Blog::with(['user'])->orderBy('id', 'DESC')->where('status', 1)->take(3)->get();
         return view('frontend.home.index', compact('sliders', 'bannerFeatures', 'frontPageAboutUsSection', 'diplomaEngineeringCourses', 'frontPageCtaSection', 'frontPageSuccessStorySection', 'events', 'teachers', 'blogs'));

@@ -62,7 +62,7 @@
                             <a class="nav-link" href="courses.html">COURSES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="events.html">EVENTS</a>
+                            <a class="nav-link" href="{{ route('upcoming-event.index') }}">EVENTS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">BLOG</a>

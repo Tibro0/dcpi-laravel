@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <!-- location -->
                             <p><i class="ti-location-pin text-primary mr-2"></i>{{ $event->location }}</p>
-                            <a href="event-single.html">
+                            <a href="{{ route('upcoming-event.details', $event->slug) }}">
                                 <h4 class="card-title">{{ $event->name }}</h4>
                             </a>
                         </div>
