@@ -55,8 +55,8 @@
                         <li class="nav-item {{ setActive(['home']) }}">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                        <li class="nav-item {{ setActive(['about-us.*']) }}">
+                            <a class="nav-link" href="{{ route('about-us.index') }}">About</a>
                         </li>
                         <li class="nav-item {{ setActive(['diploma-engineering-course.*']) }}">
                             <a class="nav-link" href="{{ route('diploma-engineering-course.index') }}">COURSES</a>

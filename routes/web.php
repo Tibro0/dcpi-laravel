@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -46,5 +47,8 @@ Route::get('diploma-engineering-course/{slug}', [OurDiplomaEngineeringCourseCont
 /** Blog Route */
 Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.details');
+
+/** About US Route */
+Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
 
 require __DIR__.'/auth.php';
