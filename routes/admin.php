@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\BannerFeatureController;
 use App\Http\Controllers\Admin\BlogController;
@@ -45,3 +46,7 @@ Route::resource('teacher', TeacherController::class);
 
 /** Blog Routes */
 Route::resource('blog', BlogController::class);
+
+/** About Us Page Route */
+Route::get('about-us/index', [AboutUsController::class, 'index'])->name('about-us.index');
+Route::put('about-us/update', [AboutUsController::class, 'update'])->name('about-us.update');

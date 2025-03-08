@@ -15,6 +15,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs query()
+ */
+	class AboutUs extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $icon
  * @property string $title
