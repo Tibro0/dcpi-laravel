@@ -15,6 +15,7 @@ class UpcomingEventController extends Controller
 
     public function upcomingEventDetails(string $slug){
         $event = Event::where(['slug' => $slug, 'status' => 1])->orderBy('priority_number', 'asc')->firstOrFail();
-        return view('frontend.pages.upcoming-event-details', compact('event'));
+        $relatedEvents = Event::where('id', '!=', $event->id)->orderBy('priority_number', 'asc')->get();
+        return view('frontend.pages.upcoming-event-details', compact('event', 'relatedEvents'));
     }
 }

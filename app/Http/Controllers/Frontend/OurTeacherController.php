@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\DiplomaEngineeringCourse;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class OurTeacherController extends Controller
 
     public function ourTeacherDetails(string $slug){
         $teacher = Teacher::where(['slug' => $slug, 'status' => 1])->orderBy('priority_number', 'asc')->firstOrFail();
-        return view('frontend.pages.our-teacher-details', compact('teacher'));
+        $diplomaEngineeringCourses = DiplomaEngineeringCourse::orderBy('priority_number', 'asc')->where('status', 1)->get();
+        return view('frontend.pages.our-teacher-details', compact('teacher', 'diplomaEngineeringCourses'));
     }
 }

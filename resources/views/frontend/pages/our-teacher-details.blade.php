@@ -76,7 +76,8 @@
                     {!! $teacher->long_description !!}
                 </div>
             </div>
-            <div class="row justify-content-center">
+
+            {{-- <div class="row justify-content-center">
                 <div class="col-12">
                     <h4 class="mb-4">COURSES</h4>
                 </div>
@@ -137,7 +138,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+            @include('frontend.home.components.courses')
         </div>
     </section>
     <!-- /teacher details -->

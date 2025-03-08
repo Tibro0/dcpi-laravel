@@ -15,6 +15,8 @@ class OurDiplomaEngineeringCourseController extends Controller
 
     public function diplomaEngineeringCourseDetails(string $slug){
         $diplomaEngineeringCourse = DiplomaEngineeringCourse::where(['slug' => $slug, 'status' => 1])->orderBy('priority_number', 'asc')->firstOrFail();
-        return view('frontend.pages.diploma-engineering-course-details', compact('diplomaEngineeringCourse'));
+
+        $relatedDiplomaEngineeringCourses = DiplomaEngineeringCourse::where('id', '!=', $diplomaEngineeringCourse->id)->orderBy('priority_number', 'asc')->get();
+        return view('frontend.pages.diploma-engineering-course-details', compact('diplomaEngineeringCourse', 'relatedDiplomaEngineeringCourses'));
     }
 }
