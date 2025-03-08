@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
 use App\Http\Controllers\Admin\FrontPageCtaSectionController;
 use App\Http\Controllers\Admin\FrontPageSuccessStorySectionController;
+use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TeacherController;
@@ -54,3 +55,6 @@ Route::put('about-us/update', [AboutUsController::class, 'update'])->name('about
 
 /** Research Routes */
 Route::resource('research', ResearchController::class);
+
+/** Notice Routes */
+Route::resource('notice', NoticeController::class);

@@ -11,9 +11,9 @@
             <div class="row">
                 <div class="col-md-8">
                     <ul class="list-inline custom-breadcrumb">
-                        <li class="list-inline-item"><a class="h2 text-primary font-secondary"
-                                href="@@page-link">Research</a></li>
-                        <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="javascript:;">Research</a>
+                        </li>
+                        <li class="list-inline-item text-white h3 font-secondary"></li>
                     </ul>
                 </div>
             </div>
@@ -40,5 +40,5 @@
             </div>
         </div>
     </section>
-    <!-- /research -->
+    <!-- /research end -->
 @endsection

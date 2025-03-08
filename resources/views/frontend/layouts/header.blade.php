@@ -21,7 +21,7 @@
                     <ul class="list-inline">
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
-                                href="notice.html">notice</a></li>
+                                href="{{ route('notice.index') }}">notice</a></li>
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
                                 href="{{ route('research.index') }}">research</a></li>

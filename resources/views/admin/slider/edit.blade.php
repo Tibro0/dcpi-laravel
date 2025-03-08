@@ -33,7 +33,6 @@
                         <label>Button URL</label>
                         <input type="text" name="button_url" value="{{ $slider->button_url }}" class="form-control">
                     </div>
-
                     <div class="form-group">
                         <label>Status</label>
                         <select name="status" class="form-control">

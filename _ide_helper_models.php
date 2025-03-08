@@ -266,9 +266,36 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice query()
+ */
+	class Notice extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $image
+ * @property string $title
+ * @property string $description
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Research newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Research newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Research query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereUpdatedAt($value)
  */
 	class Research extends \Eloquent {}
 }

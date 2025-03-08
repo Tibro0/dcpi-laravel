@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\NoticeController;
 use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
 use App\Http\Controllers\Frontend\OurTeacherController;
 use App\Http\Controllers\Frontend\ResearchController;
@@ -54,5 +55,8 @@ Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.inde
 
 /** Research Route */
 Route::get('research', [ResearchController::class, 'index'])->name('research.index');
+
+/** Notice Route */
+Route::get('notice', [NoticeController::class, 'index'])->name('notice.index');
 
 require __DIR__.'/auth.php';
