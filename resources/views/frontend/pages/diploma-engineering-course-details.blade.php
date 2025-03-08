@@ -25,6 +25,9 @@
     <section class="section-sm">
         <div class="container">
             <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">{{ $diplomaEngineeringCourse->name }}</h2>
+                </div>
                 <div class="col-12 mb-4">
                     <!-- course thumb -->
                     <img src="{{ asset($diplomaEngineeringCourse->image) }}" class="img-fluid w-100">
@@ -33,7 +36,7 @@
             <!-- course info -->
             <div class="row align-items-center mb-5">
                 <div class="col-xl-4 order-1 col-sm-6 mb-4 mb-xl-0">
-                    <h2>{{ $diplomaEngineeringCourse->name }}</h2>
+                    <h2>{{ limitText($diplomaEngineeringCourse->name, 12) }}</h2>
                 </div>
                 <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
                     <ul class="list-inline text-xl-center">

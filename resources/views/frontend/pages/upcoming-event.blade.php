@@ -39,7 +39,7 @@
                                 <!-- location -->
                                 <p><i class="ti-location-pin text-primary mr-2"></i>{{ $event->location }}</p>
                                 <a href="{{ route('upcoming-event.details', $event->slug) }}">
-                                    <h4 class="card-title">{{ $event->name }}</h4>
+                                    <h4 class="card-title">{{ limitText($event->name, 52) }}</h4>
                                 </a>
                             </div>
                         </div>

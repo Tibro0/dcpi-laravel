@@ -35,7 +35,7 @@
                             <img class="card-img-top rounded-0" src="{{ asset($teacher->image) }}" alt="teacher">
                             <div class="card-body">
                                 <a href="{{ route('our-teacher.details', $teacher->slug) }}">
-                                    <h4 class="card-title">{{ $teacher->name }}</h4>
+                                    <h4 class="card-title">{{ limitText($teacher->name, 26) }}</h4>
                                 </a>
                                 <p>{{ $teacher->designation }}</p>
                                 <ul class="list-inline">
