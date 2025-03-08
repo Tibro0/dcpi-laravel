@@ -15,9 +15,35 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $description
+ * @property string $first_counter_name
+ * @property string $first_counter_number
+ * @property string $second_counter_name
+ * @property string $second_counter_number
+ * @property string $third_counter_name
+ * @property string $third_counter_number
+ * @property string $fourth_counter_name
+ * @property string $fourth_counter_number
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereFirstCounterName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereFirstCounterNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereFourthCounterName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereFourthCounterNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereSecondCounterName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereSecondCounterNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereThirdCounterName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereThirdCounterNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereUpdatedAt($value)
  */
 	class AboutUs extends \Eloquent {}
 }
@@ -234,6 +260,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FrontPageSuccessStorySection whereVideoLink($value)
  */
 	class FrontPageSuccessStorySection extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Research query()
+ */
+	class Research extends \Eloquent {}
 }
 
 namespace App\Models{

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
 use App\Http\Controllers\Admin\FrontPageCtaSectionController;
 use App\Http\Controllers\Admin\FrontPageSuccessStorySectionController;
+use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -50,3 +51,6 @@ Route::resource('blog', BlogController::class);
 /** About Us Page Route */
 Route::get('about-us/index', [AboutUsController::class, 'index'])->name('about-us.index');
 Route::put('about-us/update', [AboutUsController::class, 'update'])->name('about-us.update');
+
+/** Research Routes */
+Route::resource('research', ResearchController::class);

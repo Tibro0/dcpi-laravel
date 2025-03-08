@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
 use App\Http\Controllers\Frontend\OurTeacherController;
+use App\Http\Controllers\Frontend\ResearchController;
 use App\Http\Controllers\Frontend\UpcomingEventController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -50,5 +51,8 @@ Route::get('blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.de
 
 /** About US Route */
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
+
+/** Research Route */
+Route::get('research', [ResearchController::class, 'index'])->name('research.index');
 
 require __DIR__.'/auth.php';

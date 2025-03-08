@@ -24,7 +24,7 @@
                                 href="notice.html">notice</a></li>
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
-                                href="research.html">research</a></li>
+                                href="{{ route('research.index') }}">research</a></li>
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
                                 href="scholarship.html">SCHOLARSHIP</a></li>
