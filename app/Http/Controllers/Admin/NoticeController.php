@@ -8,6 +8,7 @@ use App\Models\Notice;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Illuminate\Support\Str;
 
 class NoticeController extends Controller
 {
@@ -34,7 +35,7 @@ class NoticeController extends Controller
     {
         $request->validate([
             'image' => ['required', 'image', 'max:3000'],
-            'title' => ['required', 'max:255'],
+            'title' => ['required', 'max:255', 'unique:notices,title'],
             'date' => ['required', 'date', 'max:255'],
             'description' => ['required', 'max:255'],
             'priority_number' => ['required', 'integer'],
@@ -53,6 +54,7 @@ class NoticeController extends Controller
             $notice = new Notice();
             $notice->image = $save_url;
             $notice->title = $request->title;
+            $notice->slug = Str::slug($request->title);
             $notice->date = $request->date;
             $notice->description = $request->description;
             $notice->priority_number = $request->priority_number;
@@ -88,7 +90,7 @@ class NoticeController extends Controller
     {
         $request->validate([
             'image' => ['nullable', 'image', 'max:3000'],
-            'title' => ['required', 'max:255'],
+            'title' => ['required', 'max:255', 'unique:notices,title,'.$id],
             'date' => ['required', 'date', 'max:255'],
             'description' => ['required', 'max:255'],
             'priority_number' => ['required', 'integer'],
@@ -108,6 +110,7 @@ class NoticeController extends Controller
             $notice = Notice::findOrFail($id);
             $notice->image = $save_url;
             $notice->title = $request->title;
+            $notice->slug = Str::slug($request->title);
             $notice->date = $request->date;
             $notice->description = $request->description;
             $notice->priority_number = $request->priority_number;
@@ -123,6 +126,7 @@ class NoticeController extends Controller
         }else{
             $notice = Notice::findOrFail($id);
             $notice->title = $request->title;
+            $notice->slug = Str::slug($request->title);
             $notice->date = $request->date;
             $notice->description = $request->description;
             $notice->priority_number = $request->priority_number;

@@ -35,11 +35,13 @@
                                     {{ strtoupper(date('M', strtotime($notice->date))) }},{{ date('Y', strtotime($notice->date)) }}
                                 </div>
                                 <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
-                                    <a href="notice-single.html" class="h4 mb-3 d-block">{{ $notice->title }}</a>
+                                    <a href="{{ route('notice.details', $notice->slug) }}"
+                                        class="h4 mb-3 d-block">{{ $notice->title }}</a>
                                     <p class="mb-0">{{ $notice->description }}</p>
                                 </div>
-                                <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="notice-single.html"
-                                        class="btn btn-primary">read more</a></div>
+                                <div class="d-md-table-cell text-right pr-0 pr-md-4"><a
+                                        href="{{ route('notice.details', $notice->slug) }}" class="btn btn-primary">read
+                                        more</a></div>
                             </li>
                         @endforeach
                     </ul>

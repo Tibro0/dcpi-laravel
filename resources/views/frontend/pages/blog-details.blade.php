@@ -13,7 +13,8 @@
                     <ul class="list-inline custom-breadcrumb">
                         <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="blog.html">Our Blog</a>
                         </li>
-                        <li class="list-inline-item text-white h3 font-secondary nasted">{{ $blog->title }}</li>
+                        <li class="list-inline-item text-white h3 font-secondary nasted">{{ limitText($blog->title, 35) }}
+                        </li>
                     </ul>
                 </div>
             </div>

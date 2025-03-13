@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('notices', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->string('title');
+            $table->string('title')->unique();
+            $table->string('slug');
             $table->date('date');
             $table->string('description');
             $table->integer('priority_number');

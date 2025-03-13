@@ -58,5 +58,6 @@ Route::get('research', [ResearchController::class, 'index'])->name('research.ind
 
 /** Notice Route */
 Route::get('notice', [NoticeController::class, 'index'])->name('notice.index');
+Route::get('notice/{slug}', [NoticeController::class, 'noticeDetails'])->name('notice.details');
 
 require __DIR__.'/auth.php';

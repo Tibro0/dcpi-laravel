@@ -12,4 +12,9 @@ class NoticeController extends Controller
         $notices = Notice::orderBy('priority_number', 'asc')->where('status', 1)->get();
         return view('frontend.pages.notice', compact('notices'));
     }
+
+    public function noticeDetails(string $slug){
+        $notice = Notice::where(['slug' => $slug, 'status' => 1])->firstOrFail();
+        return view('frontend.pages.notice-details', compact('notice'));
+    }
 }
