@@ -61,7 +61,7 @@
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <a class="navbar-brand" href="{{ route('home') }}"><img
                         src="{{ asset('frontend/images/cropped-dcpi-web-logo-bangla-768x106.jpg') }}" alt="logo"
-                        class="img-fluid"></a>
+                        class="img-fluid" width="550"></a>
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -72,20 +72,42 @@
                         <li class="nav-item {{ setActive(['home']) }}">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
+
+                        <li class="nav-item dropdown view">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="teacher.html">Our identity</a>
+                                <a class="dropdown-item" href="teacher-single.html">Management Committee</a>
+                                <a class="dropdown-item" href="notice.html">Faculty</a>
+                                <a class="dropdown-item" href="notice-single.html">Administrative staff</a>
+                                <a class="dropdown-item" href="{{ route('upcoming-event.index') }}">News & Events</a>
+                                <a class="dropdown-item" href="{{ route('teacher.index') }}">Our TEACHER</a>
+                                <a class="dropdown-item" href="{{ route('contact.index') }}">Contact</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown view">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Courses
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"
+                                    href="{{ route('diploma-engineering-course.index') }}">Diploma in Engineering</a>
+                                <a class="dropdown-item" href="teacher-single.html">Short Course (360 hours)</a>
+                                <a class="dropdown-item" href="notice.html">CBTA (BTEB/NSDA)</a>
+                            </div>
+                        </li>
+
                         <li class="nav-item {{ setActive(['about-us.*']) }}">
                             <a class="nav-link" href="{{ route('about-us.index') }}">About</a>
                         </li>
-                        <li class="nav-item {{ setActive(['diploma-engineering-course.*']) }}">
-                            <a class="nav-link" href="{{ route('diploma-engineering-course.index') }}">COURSES</a>
-                        </li>
-                        <li class="nav-item {{ setActive(['upcoming-event.*']) }}">
-                            <a class="nav-link" href="{{ route('upcoming-event.index') }}">EVENTS</a>
-                        </li>
+
                         <li class="nav-item {{ setActive(['blog.*']) }}">
                             <a class="nav-link" href="{{ route('blog.index') }}">BLOG</a>
-                        </li>
-                        <li class="nav-item {{ setActive(['teacher.*']) }}">
-                            <a class="nav-link" href="{{ route('teacher.index') }}">TEACHER</a>
                         </li>
                         {{-- <li class="nav-item dropdown view">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -104,9 +126,6 @@
                                 <a class="dropdown-item" href="blog-single.html">Blog Details</a>
                             </div>
                         </li> --}}
-                        <li class="nav-item @@contact">
-                            <a class="nav-link" href="{{ route('contact.index') }}">CONTACT</a>
-                        </li>
                     </ul>
                 </div>
             </nav>

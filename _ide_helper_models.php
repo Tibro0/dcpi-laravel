@@ -266,9 +266,29 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $title
+ * @property string $slug
+ * @property string $date
+ * @property string $description
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Notice whereUpdatedAt($value)
  */
 	class Notice extends \Eloquent {}
 }
@@ -298,6 +318,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Research whereUpdatedAt($value)
  */
 	class Research extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse query()
+ */
+	class ShortCourse extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -390,6 +421,12 @@ namespace App\Models{
  * @property string $avatar
  * @property string $name
  * @property string $email
+ * @property string $phone
+ * @property string $address
+ * @property string $department
+ * @property string $semester
+ * @property string $student_type
+ * @property string $session
  * @property string $role
  * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
@@ -402,15 +439,21 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereAvatar($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereDepartment($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereEmailVerifiedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePhone($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRole($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereSemester($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereSession($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereStudentType($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
  */
 	class User extends \Eloquent {}

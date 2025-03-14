@@ -44,6 +44,9 @@
                     <li class="active"><a class="nav-link"
                             href="{{ route('admin.diploma-engineering-course.index') }}">Diploma Course</a>
                     </li>
+                    <li class="active"><a class="nav-link" href="{{ route('admin.short-course.index') }}">Short
+                            Course</a>
+                    </li>
                 </ul>
             </li>
 

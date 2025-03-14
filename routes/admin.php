@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\FrontPageCtaSectionController;
 use App\Http\Controllers\Admin\FrontPageSuccessStorySectionController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\ResearchController;
+use App\Http\Controllers\Admin\ShortCourseController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,9 @@ Route::put('front-page-about-us-section/update', [FrontPageAboutUsSectionControl
 
 /** Diploma Engineering Course Routes */
 Route::resource('diploma-engineering-course', DiplomaEngineeringCourseController::class);
+
+/** Short Course Routes */
+Route::resource('short-course', ShortCourseController::class);
 
 
 /** Front Page Cta Section Routes */
