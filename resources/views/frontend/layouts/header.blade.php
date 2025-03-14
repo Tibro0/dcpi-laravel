@@ -28,12 +28,28 @@
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
                                 href="scholarship.html">SCHOLARSHIP</a></li>
-                        <li class="list-inline-item"><a
-                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
-                                href="{{ route('login') }}">login</a></li>
-                        <li class="list-inline-item"><a
-                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
-                                href="{{ route('register') }}">register</a></li>
+                        @auth
+                            <li class="list-inline-item"><a
+                                    class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
+                                    href="{{ route('dashboard') }}">Dashboard</a></li>
+
+                            <li class="list-inline-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="javascript:;"
+                                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">LogOut</a>
+                                </form>
+                            </li>
+                        @else
+                            <li class="list-inline-item"><a
+                                    class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
+                                    href="{{ route('login') }}">login</a></li>
+                            <li class="list-inline-item"><a
+                                    class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
+                                    href="{{ route('register') }}">register</a></li>
+                        @endauth
+
                     </ul>
                 </div>
             </div>
@@ -43,8 +59,9 @@
     <div class="navigation w-100">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('frontend/images/logo.png') }}"
-                        alt="logo"></a>
+                <a class="navbar-brand" href="{{ route('home') }}"><img
+                        src="{{ asset('frontend/images/cropped-dcpi-web-logo-bangla-768x106.jpg') }}" alt="logo"
+                        class="img-fluid"></a>
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

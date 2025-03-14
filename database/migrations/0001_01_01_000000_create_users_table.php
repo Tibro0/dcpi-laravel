@@ -16,6 +16,12 @@ return new class extends Migration
             $table->string('avatar')->default('/uploads/avatar.png');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('department')->nullable();
+            $table->string('semester')->nullable();
+            $table->string('student_type')->nullable();
+            $table->string('session')->nullable();
             $table->enum('role', ['user', 'admin'])->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
