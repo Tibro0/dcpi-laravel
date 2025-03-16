@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\NoticeController;
 use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
 use App\Http\Controllers\Frontend\OurManagementCommitteeController;
+use App\Http\Controllers\Frontend\OurShortCourseController;
 use App\Http\Controllers\Frontend\OurTeacherController;
 use App\Http\Controllers\Frontend\ResearchController;
 use App\Http\Controllers\Frontend\UpcomingEventController;
@@ -57,6 +58,10 @@ Route::get('upcoming-event/{slug}', [UpcomingEventController::class, 'upcomingEv
 /** Diploma Engineering Course Route */
 Route::get('diploma-engineering-course', [OurDiplomaEngineeringCourseController::class, 'index'])->name('diploma-engineering-course.index');
 Route::get('diploma-engineering-course/{slug}', [OurDiplomaEngineeringCourseController::class, 'diplomaEngineeringCourseDetails'])->name('diploma-engineering-course.details');
+
+/** Short Course Route */
+Route::get('our-short-course', [OurShortCourseController::class, 'index'])->name('our-short-course.index');
+Route::get('our-short-course/{slug}', [OurShortCourseController::class, 'ourShortCourseDetails'])->name('our-short-course.details');
 
 /** Blog Route */
 Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
