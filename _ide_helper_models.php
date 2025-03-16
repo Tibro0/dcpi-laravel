@@ -113,9 +113,35 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $name
+ * @property string $slug
+ * @property string $month
+ * @property string $duration
+ * @property string $course_fee
+ * @property string $short_description
+ * @property string $long_description
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereCourseFee($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereDuration($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereLongDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereMonth($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereShortDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse whereUpdatedAt($value)
  */
 	class BtebCourse extends \Eloquent {}
 }
@@ -271,6 +297,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FrontPageSuccessStorySection whereVideoLink($value)
  */
 	class FrontPageSuccessStorySection extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee query()
+ */
+	class ManagementCommittee extends \Eloquent {}
 }
 
 namespace App\Models{

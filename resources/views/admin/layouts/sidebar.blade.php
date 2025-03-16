@@ -69,6 +69,9 @@
                 <ul class="dropdown-menu">
                     <li class="active"><a class="nav-link" href="{{ route('admin.teacher.index') }}">Teacher</a>
                     </li>
+                    <li class="active"><a class="nav-link"
+                            href="{{ route('admin.management-committee.index') }}">Management Committee</a>
+                    </li>
                 </ul>
             </li>
 
@@ -94,7 +97,8 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i>
                     <span>Research Page</span></a>
                 <ul class="dropdown-menu">
-                    <li class="active"><a class="nav-link" href="{{ route('admin.research.index') }}">Our Research</a>
+                    <li class="active"><a class="nav-link" href="{{ route('admin.research.index') }}">Our
+                            Research</a>
                     </li>
                 </ul>
             </li>

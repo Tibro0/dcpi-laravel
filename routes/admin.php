@@ -10,7 +10,9 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
 use App\Http\Controllers\Admin\FrontPageCtaSectionController;
 use App\Http\Controllers\Admin\FrontPageSuccessStorySectionController;
+use App\Http\Controllers\Admin\ManagementCommitteeController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\ShortCourseController;
 use App\Http\Controllers\Admin\SliderController;
@@ -19,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
+/** Profile Route */
+Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+Route::put('profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
+Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 
 /** Slider Routes */
 Route::resource('slider', SliderController::class);
@@ -53,6 +59,9 @@ Route::resource('event', EventController::class);
 
 /** Teacher Routes */
 Route::resource('teacher', TeacherController::class);
+
+/** Management Committee Routes */
+Route::resource('management-committee', ManagementCommitteeController::class);
 
 /** Blog Routes */
 Route::resource('blog', BlogController::class);
