@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Frontend\AboutUsController;
+use App\Http\Controllers\Frontend\AllStaticPageController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\NoticeController;
 use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
+use App\Http\Controllers\Frontend\OurManagementCommitteeController;
 use App\Http\Controllers\Frontend\OurTeacherController;
 use App\Http\Controllers\Frontend\ResearchController;
 use App\Http\Controllers\Frontend\UpcomingEventController;
@@ -44,6 +46,10 @@ Route::get('contact', [ContactController::class, 'index'])->name('contact.index'
 Route::get('our-teacher', [OurTeacherController::class, 'index'])->name('teacher.index');
 Route::get('our-teacher/{slug}', [OurTeacherController::class, 'ourTeacherDetails'])->name('our-teacher.details');
 
+/** Management Committee Route */
+Route::get('management-committee', [OurManagementCommitteeController::class, 'index'])->name('our-management-committee.index');
+Route::get('management-committee/{slug}', [OurManagementCommitteeController::class, 'ourManagementCommitteeDetails'])->name('our-management-committee.details');
+
 /** Upcoming Event Route */
 Route::get('upcoming-event', [UpcomingEventController::class, 'index'])->name('upcoming-event.index');
 Route::get('upcoming-event/{slug}', [UpcomingEventController::class, 'upcomingEventDetails'])->name('upcoming-event.details');
@@ -65,5 +71,8 @@ Route::get('research', [ResearchController::class, 'index'])->name('research.ind
 /** Notice Route */
 Route::get('notice', [NoticeController::class, 'index'])->name('notice.index');
 Route::get('notice/{slug}', [NoticeController::class, 'noticeDetails'])->name('notice.details');
+
+/** All Static Page */
+Route::get('our-identity', [AllStaticPageController::class, 'ourIdentity'])->name('our-identity.index');
 
 require __DIR__.'/auth.php';

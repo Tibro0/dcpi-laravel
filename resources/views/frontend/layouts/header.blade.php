@@ -79,12 +79,12 @@
                                 About Us
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="teacher.html">Our identity</a>
-                                <a class="dropdown-item" href="teacher-single.html">Management Committee</a>
-                                <a class="dropdown-item" href="notice.html">Faculty</a>
+                                <a class="dropdown-item" href="{{ route('our-identity.index') }}">Our identity</a>
+                                <a class="dropdown-item"
+                                    href="{{ route('our-management-committee.index') }}">Management Committee</a>
+                                <a class="dropdown-item" href="{{ route('teacher.index') }}">Our Teacher</a>
                                 <a class="dropdown-item" href="notice-single.html">Administrative staff</a>
                                 <a class="dropdown-item" href="{{ route('upcoming-event.index') }}">News & Events</a>
-                                <a class="dropdown-item" href="{{ route('teacher.index') }}">Our TEACHER</a>
                                 <a class="dropdown-item" href="{{ route('contact.index') }}">Contact</a>
                             </div>
                         </li>

@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
                                     <a href="{{ route('notice.details', $notice->slug) }}"
-                                        class="h4 mb-3 d-block">{{ $notice->title }}</a>
+                                        class="h4 mb-3 d-block">{{ limitText($notice->title, 65) }}</a>
                                     <p class="mb-0">{{ $notice->description }}</p>
                                 </div>
                                 <div class="d-md-table-cell text-right pr-0 pr-md-4"><a
