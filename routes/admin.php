@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\BannerFeatureController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\BtebCourseController;
 use App\Http\Controllers\Admin\DiplomaEngineeringCourseController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
@@ -34,6 +35,9 @@ Route::resource('diploma-engineering-course', DiplomaEngineeringCourseController
 
 /** Short Course Routes */
 Route::resource('short-course', ShortCourseController::class);
+
+/** BTEB Course Routes */
+Route::resource('bteb-course', BtebCourseController::class);
 
 
 /** Front Page Cta Section Routes */

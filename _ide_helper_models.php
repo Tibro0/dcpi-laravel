@@ -113,6 +113,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourse query()
+ */
+	class BtebCourse extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $image
  * @property string $name
@@ -324,9 +335,35 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $name
+ * @property string $slug
+ * @property string $month
+ * @property string $duration
+ * @property string $course_fee
+ * @property string $short_description
+ * @property string $long_description
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereCourseFee($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereDuration($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereLongDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereMonth($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereShortDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereUpdatedAt($value)
  */
 	class ShortCourse extends \Eloquent {}
 }

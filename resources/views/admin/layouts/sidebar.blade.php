@@ -47,6 +47,10 @@
                     <li class="active"><a class="nav-link" href="{{ route('admin.short-course.index') }}">Short
                             Course</a>
                     </li>
+
+                    <li class="active"><a class="nav-link" href="{{ route('admin.bteb-course.index') }}">CBTA
+                            (BTEB/NSDA)</a>
+                    </li>
                 </ul>
             </li>
 
