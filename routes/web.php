@@ -8,11 +8,13 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\NoticeController;
+use App\Http\Controllers\Frontend\OurBtebShortCourseController;
 use App\Http\Controllers\Frontend\OurDiplomaEngineeringCourseController;
 use App\Http\Controllers\Frontend\OurManagementCommitteeController;
 use App\Http\Controllers\Frontend\OurShortCourseController;
 use App\Http\Controllers\Frontend\OurTeacherController;
 use App\Http\Controllers\Frontend\ResearchController;
+use App\Http\Controllers\Frontend\SubscribeController;
 use App\Http\Controllers\Frontend\UpcomingEventController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +65,10 @@ Route::get('diploma-engineering-course/{slug}', [OurDiplomaEngineeringCourseCont
 Route::get('our-short-course', [OurShortCourseController::class, 'index'])->name('our-short-course.index');
 Route::get('our-short-course/{slug}', [OurShortCourseController::class, 'ourShortCourseDetails'])->name('our-short-course.details');
 
+/** Short Course Route */
+Route::get('our-bteb-course', [OurBtebShortCourseController::class, 'index'])->name('our-bteb-course.index');
+Route::get('our-bteb-course/{slug}', [OurBtebShortCourseController::class, 'ourBtebShortCourseDetails'])->name('our-bteb-course.details');
+
 /** Blog Route */
 Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('blog/{slug}', [BlogController::class, 'blogDetails'])->name('blog.details');
@@ -79,5 +85,8 @@ Route::get('notice/{slug}', [NoticeController::class, 'noticeDetails'])->name('n
 
 /** All Static Page */
 Route::get('our-identity', [AllStaticPageController::class, 'ourIdentity'])->name('our-identity.index');
+
+/** Newsletter Routes */
+Route::post('subscribe-newsletter', [SubscribeController::class, 'subscribeNewsletter'])->name('subscribe-newsletter');
 
 require __DIR__.'/auth.php';

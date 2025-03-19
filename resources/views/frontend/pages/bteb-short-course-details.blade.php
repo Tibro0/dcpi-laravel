@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @push('frontend-css')
-    <title>Educenter | Short Course Details</title>
+    <title>Educenter | Short BTEB Course Details</title>
 @endpush
 
 @section('frontend-content')
@@ -11,7 +11,8 @@
             <div class="row">
                 <div class="col-md-8">
                     <ul class="list-inline custom-breadcrumb">
-                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="javascript:;">Our Short
+                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="javascript:;">Our BTEB
+                                Short
                                 Course</a></li>
                     </ul>
                 </div>
@@ -25,17 +26,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-title">{{ $ourShortCourse->name }}</h2>
+                    <h2 class="section-title">{{ $ourBtebShortCourse->name }}</h2>
                 </div>
                 <div class="col-12 mb-4">
                     <!-- course thumb -->
-                    <img src="{{ asset($ourShortCourse->image) }}" class="img-fluid w-100">
+                    <img src="{{ asset($ourBtebShortCourse->image) }}" class="img-fluid w-100">
                 </div>
             </div>
             <!-- course info -->
             <div class="row align-items-center mb-5">
                 <div class="col-xl-4 order-1 col-sm-6 mb-4 mb-xl-0">
-                    <h2>{{ limitText($ourShortCourse->name, 12) }}</h2>
+                    <h2>{{ limitText($ourBtebShortCourse->name, 12) }}</h2>
                 </div>
                 <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
                     <ul class="list-inline text-xl-center">
@@ -44,7 +45,7 @@
                                 <i class="ti-book text-primary icon-md mr-2"></i>
                                 <div class="text-left">
                                     <h6 class="mb-0">COURSES</h6>
-                                    <p class="mb-0">{{ $ourShortCourse->month }}</p>
+                                    <p class="mb-0">{{ $ourBtebShortCourse->month }}</p>
                                 </div>
                             </div>
                         </li>
@@ -53,7 +54,7 @@
                                 <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
                                 <div class="text-left">
                                     <h6 class="mb-0">DURATION</h6>
-                                    <p class="mb-0">{{ $ourShortCourse->duration }}</p>
+                                    <p class="mb-0">{{ $ourBtebShortCourse->duration }}</p>
                                 </div>
                             </div>
                         </li>
@@ -62,7 +63,7 @@
                                 <i class="ti-wallet text-primary icon-md mr-2"></i>
                                 <div class="text-left">
                                     <h6 class="mb-0">FEE</h6>
-                                    <p class="mb-0">From: {{ $ourShortCourse->course_fee }}</p>
+                                    <p class="mb-0">From: {{ $ourBtebShortCourse->course_fee }}</p>
                                 </div>
                             </div>
                         </li>
@@ -79,7 +80,7 @@
             <!-- course details -->
             <div class="row">
                 <div class="col-12 mb-4">
-                    {!! $ourShortCourse->long_description !!}
+                    {!! $ourBtebShortCourse->long_description !!}
                 </div>
 
                 <!-- teacher start -->
@@ -116,7 +117,7 @@
     <!-- /section -->
 
     <!-- related course Start -->
-    @if (count($relatedOurShortCourses) > 0)
+    @if (count($relatedOurBtebShortCourses) > 0)
         <section class="section pt-0">
             <div class="container">
                 <div class="row">
@@ -126,22 +127,22 @@
                 </div>
                 <div class="row justify-content-center">
                     <!-- course item -->
-                    @foreach ($relatedOurShortCourses as $relatedOurShortCourse)
+                    @foreach ($relatedOurBtebShortCourses as $relatedOurBtebShortCourse)
                         <div class="col-lg-4 col-sm-6 mb-5">
                             <div class="card p-0 border-primary rounded-0 hover-shadow">
-                                <img class="card-img-top rounded-0" src="{{ asset($relatedOurShortCourse->image) }}"
+                                <img class="card-img-top rounded-0" src="{{ asset($relatedOurBtebShortCourse->image) }}"
                                     alt="course thumb">
                                 <div class="card-body">
                                     <ul class="list-inline mb-2">
                                         <li class="list-inline-item"><i
-                                                class="ti-calendar mr-1 text-color"></i>{{ date('d-m-Y', strToTime($relatedOurShortCourse->created_at)) }}
+                                                class="ti-calendar mr-1 text-color"></i>{{ date('d-m-Y', strToTime($relatedOurBtebShortCourse->created_at)) }}
                                         </li>
                                     </ul>
-                                    <a href="{{ route('our-short-course.details', $relatedOurShortCourse->slug) }}">
-                                        <h4 class="card-title">{{ $relatedOurShortCourse->name }}</h4>
+                                    <a href="{{ route('our-bteb-course.details', $relatedOurBtebShortCourse->slug) }}">
+                                        <h4 class="card-title">{{ $relatedOurBtebShortCourse->name }}</h4>
                                     </a>
-                                    <p class="card-text mb-4">{{ $relatedOurShortCourse->short_description }}</p>
-                                    <a href="{{ route('our-short-course.details', $relatedOurShortCourse->slug) }}"
+                                    <p class="card-text mb-4">{{ $relatedOurBtebShortCourse->short_description }}</p>
+                                    <a href="{{ route('our-bteb-course.details', $relatedOurBtebShortCourse->slug) }}"
                                         class="btn btn-primary btn-sm">Apply now</a>
                                 </div>
                             </div>

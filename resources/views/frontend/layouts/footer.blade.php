@@ -5,11 +5,12 @@
             <div class="row">
                 <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
                     <h3 class="text-white">Subscribe Now</h3>
-                    <form action="#">
+                    <form class="subscribe_form">
+                        @csrf
                         <div class="input-wrapper">
-                            <input type="email" class="form-control border-0" id="newsletter" name="newsletter"
+                            <input type="email" class="form-control border-0" id="newsletter" name="email"
                                 placeholder="Enter Your Email...">
-                            <button type="submit" value="send" class="btn btn-primary">Join</button>
+                            <button type="submit" value="send" class="btn btn-primary subscribe_btn">Join</button>
                         </div>
                     </form>
                 </div>
@@ -106,3 +107,48 @@
         </div>
     </div>
 </footer>
+
+
+@push('frontend-js')
+    <script>
+        $(document).ready(function() {
+            $('.subscribe_form').on('submit', function(e) {
+                e.preventDefault();
+                let formData = $(this).serialize();
+                $.ajax({
+                    method: 'POST',
+                    url: '{{ route('subscribe-newsletter') }}',
+                    data: formData,
+                    beforeSend: function() {
+                        $('.subscribe_btn').attr('disabled', true);
+                        $('.subscribe_btn').html(
+                            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
+                        );
+                    },
+                    success: function(response) {
+                        $('.subscribe_form').trigger("reset");
+                        $('.subscribe_btn').attr('disabled', false);
+                        $('.subscribe_btn').html('Subscribe');
+                        toastr.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        let errors = xhr.responseJSON.errors;
+
+                        $.each(errors, function(index, value) {
+                            toastr.error(value);
+                        });
+
+                        $('.subscribe_btn').attr('disabled', true);
+                        $('.subscribe_btn').html(
+                            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
+                        );
+                    },
+                    complete: function() {
+                        $('.subscribe_btn').attr('disabled', false);
+                        $('.subscribe_btn').html('Subscribe');
+                    }
+                })
+            })
+        })
+    </script>
+@endpush

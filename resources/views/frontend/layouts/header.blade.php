@@ -99,7 +99,8 @@
                                     href="{{ route('diploma-engineering-course.index') }}">Diploma in Engineering</a>
                                 <a class="dropdown-item" href="{{ route('our-short-course.index') }}">Short Course
                                     (360 hours)</a>
-                                <a class="dropdown-item" href="notice.html">CBTA (BTEB/NSDA)</a>
+                                <a class="dropdown-item" href="{{ route('our-bteb-course.index') }}">CBTA
+                                    (BTEB/NSDA)</a>
                             </div>
                         </li>
 

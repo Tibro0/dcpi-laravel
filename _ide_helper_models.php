@@ -303,9 +303,53 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $name
+ * @property string $slug
+ * @property string $designation
+ * @property string|null $email
+ * @property string|null $whatsapp
+ * @property string|null $facebook_id_name
+ * @property string|null $facebook_url
+ * @property string|null $linkedin_id_name
+ * @property string|null $linkedin_url
+ * @property string|null $twitter_id_name
+ * @property string|null $twitter_url
+ * @property string|null $website_url
+ * @property string|null $address
+ * @property string|null $address_url
+ * @property string $short_description
+ * @property string $long_description
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereAddressUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereDesignation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereFacebookIdName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereFacebookUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereLinkedinIdName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereLinkedinUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereLongDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereShortDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereTwitterIdName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereTwitterUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereWebsiteUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ManagementCommittee whereWhatsapp($value)
  */
 	class ManagementCommittee extends \Eloquent {}
 }
@@ -430,6 +474,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedAt($value)
  */
 	class Slider extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber query()
+ */
+	class Subscriber extends \Eloquent {}
 }
 
 namespace App\Models{
