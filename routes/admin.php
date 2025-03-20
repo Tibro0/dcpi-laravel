@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\BannerFeatureController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BtebCourseController;
+use App\Http\Controllers\Admin\CustomStaticPageController;
 use App\Http\Controllers\Admin\DiplomaEngineeringCourseController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
@@ -75,3 +76,8 @@ Route::resource('research', ResearchController::class);
 
 /** Notice Routes */
 Route::resource('notice', NoticeController::class);
+
+/** Custom Page All Route */
+Route::get('our-identity/index', [CustomStaticPageController::class, 'ourIdentityIndex'])->name('our-identity.index');
+
+Route::put('our-identity/update', [CustomStaticPageController::class, 'ourIdentityUpdate'])->name('our-identity.update');

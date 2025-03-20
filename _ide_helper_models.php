@@ -150,6 +150,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage query()
+ */
+	class CustomStaticPage extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $image
  * @property string $name
@@ -480,9 +491,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $email
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Subscriber whereUpdatedAt($value)
  */
 	class Subscriber extends \Eloquent {}
 }

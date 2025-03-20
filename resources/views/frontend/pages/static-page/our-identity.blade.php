@@ -27,6 +27,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Our identity</h1>
+                    {!! $ourIdentityContent['our_identity_page_content'] !!}
                 </div>
             </div>
         </div>
