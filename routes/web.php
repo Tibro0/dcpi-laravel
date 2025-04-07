@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\AllStaticPageController;
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\ClassRoutineController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -88,5 +89,8 @@ Route::get('our-identity', [AllStaticPageController::class, 'ourIdentity'])->nam
 
 /** Newsletter Routes */
 Route::post('subscribe-newsletter', [SubscribeController::class, 'subscribeNewsletter'])->name('subscribe-newsletter');
+
+/** Class Routine Routes */
+Route::get('diploma-in-engineering-class-routine', [ClassRoutineController::class, 'diplomaInEngineeringClassRoutine'])->name('diploma-in-engineering-class-routine.index');
 
 require __DIR__.'/auth.php';

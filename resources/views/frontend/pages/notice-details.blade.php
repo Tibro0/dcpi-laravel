@@ -38,8 +38,7 @@
                         <div>
                             <h3 class="mb-4">{{ $notice->title }}</h3>
                             <img src="{{ asset($notice->image) }}" style="width: 880px; height: 1000px;" alt="">
-                            <a href="{{ 'public/' . $notice->image }}" download="{{ $notice->slug }}"
-                                class="btn btn-primary">Download</a>
+                            <a href="{{ asset($notice->image) }}" download class="btn btn-primary">Download</a>
                         </div>
                     </div>
                 </div>

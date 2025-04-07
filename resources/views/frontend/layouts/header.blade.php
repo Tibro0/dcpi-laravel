@@ -61,7 +61,7 @@
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <a class="navbar-brand" href="{{ route('home') }}"><img
                         src="{{ asset('frontend/images/cropped-dcpi-web-logo-bangla-768x106.jpg') }}" alt="logo"
-                        class="img-fluid" width="550"></a>
+                        class="img-fluid" width="450"></a>
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -92,6 +92,22 @@
                         <li class="nav-item dropdown view">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Academic
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"
+                                    href="{{ route('diploma-in-engineering-class-routine.index') }}">Diploma in
+                                    Engineering Class Routine</a>
+                                <a class="dropdown-item" href="#">Short Course (360
+                                    hours) Class Routine</a>
+                                <a class="dropdown-item" href="#">CBTA
+                                    (BTEB/NSDA) Class Routine</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown view">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Courses
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -103,14 +119,13 @@
                                     (BTEB/NSDA)</a>
                             </div>
                         </li>
-
                         <li class="nav-item {{ setActive(['about-us.*']) }}">
                             <a class="nav-link" href="{{ route('about-us.index') }}">About</a>
                         </li>
-
                         <li class="nav-item {{ setActive(['blog.*']) }}">
                             <a class="nav-link" href="{{ route('blog.index') }}">BLOG</a>
                         </li>
+
                         {{-- <li class="nav-item dropdown view">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
