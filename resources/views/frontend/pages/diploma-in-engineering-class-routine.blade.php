@@ -31,72 +31,113 @@
                         <table class="table table-hover border">
                             <thead>
                                 <tr>
-                                    <th scope="col">SL.#</th>
-                                    <th scope="col">NAME OF TECHNOLOGY</th>
-                                    <th scope="col">1ST SEMESTER (PROBIDHAN-2022)</th>
-                                    <th scope="col">2ND SEMESTER (PROBIDHAN-2022)</th>
-                                    <th scope="col">3RD SEMESTER (PROBIDHAN-2022)</th>
-                                    <th scope="col">4TH SEMESTER (PROBIDHAN-2022)</th>
-                                    <th scope="col">5TH SEMESTER (PROBIDHAN-2016)</th>
-                                    <th scope="col">6TH SEMESTER (PROBIDHAN-2016)</th>
-                                    <th scope="col">7TH SEMESTER (PROBIDHAN-2016)</th>
+                                    <th scope="col" class="text-center">SL.#</th>
+                                    <th scope="col" class="text-center">NAME OF TECHNOLOGY</th>
+                                    <th scope="col" class="text-center">1ST SEMESTER (PROBIDHAN-2022)</th>
+                                    <th scope="col" class="text-center">2ND SEMESTER (PROBIDHAN-2022)</th>
+                                    <th scope="col" class="text-center">3RD SEMESTER (PROBIDHAN-2022)</th>
+                                    <th scope="col" class="text-center">4TH SEMESTER (PROBIDHAN-2022)</th>
+                                    <th scope="col" class="text-center">5TH SEMESTER (PROBIDHAN-2016)</th>
+                                    <th scope="col" class="text-center">6TH SEMESTER (PROBIDHAN-2016)</th>
+                                    <th scope="col" class="text-center">7TH SEMESTER (PROBIDHAN-2016)</th>
+                                    <th scope="col" class="text-center">8TH SEMESTER (PROBIDHAN-2016)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>64-CIVIL TECHNOLOGY</td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
+                                    <th scope="row" class="text-center">1</th>
+                                    <td class="text-center">64-CIVIL TECHNOLOGY</td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center">Industrial Training</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>67-ELECTRICAL TECNOLOGY</td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
+                                    <th scope="row" class="text-center">1</th>
+                                    <td class="text-center">67-ELECTRICAL TECNOLOGY</td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center">Industrial Training</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>66-COMPUTER SCIENCE & TECHNOLOGY</td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
+                                    <th scope="row" class="text-center">1</th>
+                                    <td class="text-center">66-COMPUTER SCIENCE & TECHNOLOGY</td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center">Industrial Training</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>68-ELECTRONICS TECHNOLOGY</td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
+                                    <th scope="row" class="text-center">1</th>
+                                    <td class="text-center">68-ELECTRONICS TECHNOLOGY</td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center">Industrial Training</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>94-TELECOMMUNICATION TECHNOLOGY</td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
-                                    <td><a href="#" class="btn btn-primary btn-sm">Download</a></td>
+                                    <th scope="row" class="text-center">1</th>
+                                    <td class="text-center">94-TELECOMMUNICATION TECHNOLOGY</td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    </td>
+                                    <td class="text-center">Industrial Training</td>
                                 </tr>
                             </tbody>
                         </table>

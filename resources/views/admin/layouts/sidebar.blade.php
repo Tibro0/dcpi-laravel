@@ -123,6 +123,9 @@
                 </ul>
             </li>
 
+            <li><a class="nav-link" href="{{ route('admin.subscriber.index') }}"><i class="fas fa-cogs"></i>
+                    <span>Subscriber</span></a></li>
+
             {{-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i>
                     <span>Pages</span></a>

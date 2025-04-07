@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\ShortCourseController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TeacherController;
 use Illuminate\Support\Facades\Route;
 
@@ -79,5 +80,8 @@ Route::resource('notice', NoticeController::class);
 
 /** Custom Page All Route */
 Route::get('our-identity/index', [CustomStaticPageController::class, 'ourIdentityIndex'])->name('our-identity.index');
-
 Route::put('our-identity/update', [CustomStaticPageController::class, 'ourIdentityUpdate'])->name('our-identity.update');
+
+/** Subscriber All Route */
+Route::get('subscriber/index', [SubscriberController::class, 'index'])->name('subscriber.index');
+Route::delete('subscriber/delete/{id}', [SubscriberController::class, 'destroy'])->name('subscriber.destroy');
