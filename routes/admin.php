@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AllStudentController;
 use App\Http\Controllers\Admin\BannerFeatureController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BtebCourseController;
@@ -85,3 +86,9 @@ Route::put('our-identity/update', [CustomStaticPageController::class, 'ourIdenti
 /** Subscriber All Route */
 Route::get('subscriber/index', [SubscriberController::class, 'index'])->name('subscriber.index');
 Route::delete('subscriber/delete/{id}', [SubscriberController::class, 'destroy'])->name('subscriber.destroy');
+
+/** Student All Route */
+Route::get('student/index', [AllStudentController::class, 'allStudentIndex'])->name('student.index');
+Route::get('student/edit/{id}', [AllStudentController::class, 'edit'])->name('student.edit');
+Route::put('student/update/{id}', [AllStudentController::class, 'update'])->name('student.update');
+Route::delete('student/delete/{id}', [AllStudentController::class, 'destroy'])->name('student.destroy');
