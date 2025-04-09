@@ -150,9 +150,19 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string|null $key
+ * @property string|null $value
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomStaticPage whereValue($value)
  */
 	class CustomStaticPage extends \Eloquent {}
 }
@@ -192,6 +202,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaEngineeringCourse whereUpdatedAt($value)
  */
 	class DiplomaEngineeringCourse extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine query()
+ */
+	class DiplomaInEngineeringClassRoutine extends \Eloquent {}
 }
 
 namespace App\Models{

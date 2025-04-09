@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BannerFeatureController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BtebCourseController;
 use App\Http\Controllers\Admin\CustomStaticPageController;
+use App\Http\Controllers\Admin\DiplomaClassRoutineController;
 use App\Http\Controllers\Admin\DiplomaEngineeringCourseController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\FrontPageAboutUsSectionController;
@@ -92,3 +93,7 @@ Route::get('student/index', [AllStudentController::class, 'allStudentIndex'])->n
 Route::get('student/edit/{id}', [AllStudentController::class, 'edit'])->name('student.edit');
 Route::put('student/update/{id}', [AllStudentController::class, 'update'])->name('student.update');
 Route::delete('student/delete/{id}', [AllStudentController::class, 'destroy'])->name('student.destroy');
+
+/** Diploma Class Routine All Route */
+Route::get('diploma-class-routine-civil/index', [DiplomaClassRoutineController::class, 'civilIndex'])->name('civil.index');
+Route::put('diploma-class-routine-civil/update', [DiplomaClassRoutineController::class, 'civilUpdate'])->name('civil.update');
