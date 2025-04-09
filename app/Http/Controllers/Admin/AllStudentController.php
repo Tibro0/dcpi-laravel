@@ -80,4 +80,12 @@ class AllStudentController extends Controller
             return redirect()->route('admin.student.index');
         }
     }
+
+    public function destroy(string $id){
+        $student = User::findOrFail($id);
+        unlink($student->avatar);
+        $student->delete();
+
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+    }
 }
