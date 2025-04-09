@@ -225,4 +225,58 @@ class DiplomaClassRoutineController extends Controller
         toastr()->success('Updated Successfully');
         return redirect()->back();
     }
+
+    public function telecommunicationIndex(){
+        $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
+        return view('admin.diploma-class-routine.telecommunication-index', compact('diplomaClassRoutine'));
+    }
+
+    public function telecommunicationUpdate(Request $request){
+        $request->validate([
+            'telecommunication_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'telecommunication_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'telecommunication_3nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'telecommunication_4nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'telecommunication_5nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'telecommunication_6nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'telecommunication_7nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+        ]);
+        $ClassRoutineImage = DiplomaInEngineeringClassRoutine::findOrFail(1);
+
+        $telecommunication_1st_semester_routine_image = $this->updateImage($request, 'telecommunication_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_1st_semester_routine_image);
+
+        $telecommunication_2nd_semester_routine_image = $this->updateImage($request, 'telecommunication_2nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_2nd_semester_routine_image);
+
+        $telecommunication_3nd_semester_routine_image = $this->updateImage($request, 'telecommunication_3nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_3nd_semester_routine_image);
+
+        $telecommunication_4nd_semester_routine_image = $this->updateImage($request, 'telecommunication_4nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_4nd_semester_routine_image);
+
+        $telecommunication_5nd_semester_routine_image = $this->updateImage($request, 'telecommunication_5nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_5nd_semester_routine_image);
+
+        $telecommunication_6nd_semester_routine_image = $this->updateImage($request, 'telecommunication_6nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_6nd_semester_routine_image);
+
+        $telecommunication_7nd_semester_routine_image = $this->updateImage($request, 'telecommunication_7nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->telecommunication_7nd_semester_routine_image);
+
+        DiplomaInEngineeringClassRoutine::updateOrCreate(
+            ['id' => 1],
+            [
+                'telecommunication_1st_semester_routine_image' => empty(!$telecommunication_1st_semester_routine_image) ? $telecommunication_1st_semester_routine_image : $ClassRoutineImage->telecommunication_1st_semester_routine_image,
+
+                'telecommunication_2nd_semester_routine_image' => empty(!$telecommunication_2nd_semester_routine_image) ? $telecommunication_2nd_semester_routine_image : $ClassRoutineImage->telecommunication_2nd_semester_routine_image,
+
+                'telecommunication_3nd_semester_routine_image' => empty(!$telecommunication_3nd_semester_routine_image) ? $telecommunication_3nd_semester_routine_image : $ClassRoutineImage->telecommunication_3nd_semester_routine_image,
+
+                'telecommunication_4nd_semester_routine_image' => empty(!$telecommunication_4nd_semester_routine_image) ? $telecommunication_4nd_semester_routine_image : $ClassRoutineImage->telecommunication_4nd_semester_routine_image,
+
+                'telecommunication_5nd_semester_routine_image' => empty(!$telecommunication_5nd_semester_routine_image) ? $telecommunication_5nd_semester_routine_image : $ClassRoutineImage->telecommunication_5nd_semester_routine_image,
+
+                'telecommunication_6nd_semester_routine_image' => empty(!$telecommunication_6nd_semester_routine_image) ? $telecommunication_6nd_semester_routine_image : $ClassRoutineImage->telecommunication_6nd_semester_routine_image,
+
+                'telecommunication_7nd_semester_routine_image' => empty(!$telecommunication_7nd_semester_routine_image) ? $telecommunication_7nd_semester_routine_image : $ClassRoutineImage->telecommunication_7nd_semester_routine_image,
+            ]
+        );
+
+        toastr()->success('Updated Successfully');
+        return redirect()->back();
+    }
 }

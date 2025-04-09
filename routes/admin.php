@@ -106,3 +106,6 @@ Route::put('diploma-class-routine-electrical/update', [DiplomaClassRoutineContro
 
 Route::get('diploma-class-routine-electronics/index', [DiplomaClassRoutineController::class, 'electronicsIndex'])->name('electronics.index');
 Route::put('diploma-class-routine-electronics/update', [DiplomaClassRoutineController::class, 'electronicsUpdate'])->name('electronics.update');
+
+Route::get('diploma-class-routine-telecommunication/index', [DiplomaClassRoutineController::class, 'telecommunicationIndex'])->name('telecommunication.index');
+Route::put('diploma-class-routine-telecommunication/update', [DiplomaClassRoutineController::class, 'telecommunicationUpdate'])->name('telecommunication.update');
