@@ -147,7 +147,7 @@
                     </li>
                     <li class="active"><a class="nav-link" href="{{ route('admin.electrical.index') }}">Electrical</a>
                     </li>
-                    <li class="active"><a class="nav-link" href="#">Electronics</a>
+                    <li class="active"><a class="nav-link" href="{{ route('admin.electronics.index') }}">Electronics</a>
                     </li>
                     <li class="active"><a class="nav-link" href="#">Telecommunication</a>
                     </li>

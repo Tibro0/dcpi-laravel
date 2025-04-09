@@ -171,4 +171,58 @@ class DiplomaClassRoutineController extends Controller
         toastr()->success('Updated Successfully');
         return redirect()->back();
     }
+
+    public function electronicsIndex(){
+        $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
+        return view('admin.diploma-class-routine.electronics-index', compact('diplomaClassRoutine'));
+    }
+
+    public function electronicsUpdate(Request $request){
+        $request->validate([
+            'electronics_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electronics_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electronics_3nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electronics_4nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electronics_5nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electronics_6nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electronics_7nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+        ]);
+        $ClassRoutineImage = DiplomaInEngineeringClassRoutine::findOrFail(1);
+
+        $electronics_1st_semester_routine_image = $this->updateImage($request, 'electronics_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_1st_semester_routine_image);
+
+        $electronics_2nd_semester_routine_image = $this->updateImage($request, 'electronics_2nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_2nd_semester_routine_image);
+
+        $electronics_3nd_semester_routine_image = $this->updateImage($request, 'electronics_3nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_3nd_semester_routine_image);
+
+        $electronics_4nd_semester_routine_image = $this->updateImage($request, 'electronics_4nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_4nd_semester_routine_image);
+
+        $electronics_5nd_semester_routine_image = $this->updateImage($request, 'electronics_5nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_5nd_semester_routine_image);
+
+        $electronics_6nd_semester_routine_image = $this->updateImage($request, 'electronics_6nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_6nd_semester_routine_image);
+
+        $electronics_7nd_semester_routine_image = $this->updateImage($request, 'electronics_7nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electronics_7nd_semester_routine_image);
+
+        DiplomaInEngineeringClassRoutine::updateOrCreate(
+            ['id' => 1],
+            [
+                'electronics_1st_semester_routine_image' => empty(!$electronics_1st_semester_routine_image) ? $electronics_1st_semester_routine_image : $ClassRoutineImage->electronics_1st_semester_routine_image,
+
+                'electronics_2nd_semester_routine_image' => empty(!$electronics_2nd_semester_routine_image) ? $electronics_2nd_semester_routine_image : $ClassRoutineImage->electronics_2nd_semester_routine_image,
+
+                'electronics_3nd_semester_routine_image' => empty(!$electronics_3nd_semester_routine_image) ? $electronics_3nd_semester_routine_image : $ClassRoutineImage->electronics_3nd_semester_routine_image,
+
+                'electronics_4nd_semester_routine_image' => empty(!$electronics_4nd_semester_routine_image) ? $electronics_4nd_semester_routine_image : $ClassRoutineImage->electronics_4nd_semester_routine_image,
+
+                'electronics_5nd_semester_routine_image' => empty(!$electronics_5nd_semester_routine_image) ? $electronics_5nd_semester_routine_image : $ClassRoutineImage->electronics_5nd_semester_routine_image,
+
+                'electronics_6nd_semester_routine_image' => empty(!$electronics_6nd_semester_routine_image) ? $electronics_6nd_semester_routine_image : $ClassRoutineImage->electronics_6nd_semester_routine_image,
+
+                'electronics_7nd_semester_routine_image' => empty(!$electronics_7nd_semester_routine_image) ? $electronics_7nd_semester_routine_image : $ClassRoutineImage->electronics_7nd_semester_routine_image,
+            ]
+        );
+
+        toastr()->success('Updated Successfully');
+        return redirect()->back();
+    }
 }
