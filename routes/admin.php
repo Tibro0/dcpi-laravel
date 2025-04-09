@@ -97,3 +97,6 @@ Route::delete('student/delete/{id}', [AllStudentController::class, 'destroy'])->
 /** Diploma Class Routine All Route */
 Route::get('diploma-class-routine-civil/index', [DiplomaClassRoutineController::class, 'civilIndex'])->name('civil.index');
 Route::put('diploma-class-routine-civil/update', [DiplomaClassRoutineController::class, 'civilUpdate'])->name('civil.update');
+
+Route::get('diploma-class-routine-computer/index', [DiplomaClassRoutineController::class, 'computerIndex'])->name('computer.index');
+Route::put('diploma-class-routine-computer/update', [DiplomaClassRoutineController::class, 'computerUpdate'])->name('computer.update');

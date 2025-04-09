@@ -143,7 +143,7 @@
                 <ul class="dropdown-menu">
                     <li class="active"><a class="nav-link" href="{{ route('admin.civil.index') }}">Civil</a>
                     </li>
-                    <li class="active"><a class="nav-link" href="#">Computer</a>
+                    <li class="active"><a class="nav-link" href="{{ route('admin.computer.index') }}">Computer</a>
                     </li>
                     <li class="active"><a class="nav-link" href="#">Electrical</a>
                     </li>
