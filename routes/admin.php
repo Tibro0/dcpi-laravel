@@ -100,3 +100,6 @@ Route::put('diploma-class-routine-civil/update', [DiplomaClassRoutineController:
 
 Route::get('diploma-class-routine-computer/index', [DiplomaClassRoutineController::class, 'computerIndex'])->name('computer.index');
 Route::put('diploma-class-routine-computer/update', [DiplomaClassRoutineController::class, 'computerUpdate'])->name('computer.update');
+
+Route::get('diploma-class-routine-electrical/index', [DiplomaClassRoutineController::class, 'electricalIndex'])->name('electrical.index');
+Route::put('diploma-class-routine-electrical/update', [DiplomaClassRoutineController::class, 'electricalUpdate'])->name('electrical.update');

@@ -117,4 +117,58 @@ class DiplomaClassRoutineController extends Controller
         toastr()->success('Updated Successfully');
         return redirect()->back();
     }
+
+    public function electricalIndex(){
+        $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
+        return view('admin.diploma-class-routine.electrical-index', compact('diplomaClassRoutine'));
+    }
+
+    public function electricalUpdate(Request $request){
+        $request->validate([
+            'electrical_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electrical_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electrical_3nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electrical_4nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electrical_5nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electrical_6nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+            'electrical_7nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
+        ]);
+        $ClassRoutineImage = DiplomaInEngineeringClassRoutine::findOrFail(1);
+
+        $electrical_1st_semester_routine_image = $this->updateImage($request, 'electrical_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_1st_semester_routine_image);
+
+        $electrical_2nd_semester_routine_image = $this->updateImage($request, 'electrical_2nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_2nd_semester_routine_image);
+
+        $electrical_3nd_semester_routine_image = $this->updateImage($request, 'electrical_3nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_3nd_semester_routine_image);
+
+        $electrical_4nd_semester_routine_image = $this->updateImage($request, 'electrical_4nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_4nd_semester_routine_image);
+
+        $electrical_5nd_semester_routine_image = $this->updateImage($request, 'electrical_5nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_5nd_semester_routine_image);
+
+        $electrical_6nd_semester_routine_image = $this->updateImage($request, 'electrical_6nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_6nd_semester_routine_image);
+
+        $electrical_7nd_semester_routine_image = $this->updateImage($request, 'electrical_7nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->electrical_7nd_semester_routine_image);
+
+        DiplomaInEngineeringClassRoutine::updateOrCreate(
+            ['id' => 1],
+            [
+                'electrical_1st_semester_routine_image' => empty(!$electrical_1st_semester_routine_image) ? $electrical_1st_semester_routine_image : $ClassRoutineImage->electrical_1st_semester_routine_image,
+
+                'electrical_2nd_semester_routine_image' => empty(!$electrical_2nd_semester_routine_image) ? $electrical_2nd_semester_routine_image : $ClassRoutineImage->electrical_2nd_semester_routine_image,
+
+                'electrical_3nd_semester_routine_image' => empty(!$electrical_3nd_semester_routine_image) ? $electrical_3nd_semester_routine_image : $ClassRoutineImage->electrical_3nd_semester_routine_image,
+
+                'electrical_4nd_semester_routine_image' => empty(!$electrical_4nd_semester_routine_image) ? $electrical_4nd_semester_routine_image : $ClassRoutineImage->electrical_4nd_semester_routine_image,
+
+                'electrical_5nd_semester_routine_image' => empty(!$electrical_5nd_semester_routine_image) ? $electrical_5nd_semester_routine_image : $ClassRoutineImage->electrical_5nd_semester_routine_image,
+
+                'electrical_6nd_semester_routine_image' => empty(!$electrical_6nd_semester_routine_image) ? $electrical_6nd_semester_routine_image : $ClassRoutineImage->electrical_6nd_semester_routine_image,
+
+                'electrical_7nd_semester_routine_image' => empty(!$electrical_7nd_semester_routine_image) ? $electrical_7nd_semester_routine_image : $ClassRoutineImage->electrical_7nd_semester_routine_image,
+            ]
+        );
+
+        toastr()->success('Updated Successfully');
+        return redirect()->back();
+    }
 }
