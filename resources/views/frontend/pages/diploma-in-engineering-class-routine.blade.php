@@ -47,95 +47,98 @@
                                 <tr>
                                     <th scope="row" class="text-center">1</th>
                                     <td class="text-center">64-CIVIL TECHNOLOGY</td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_1st_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_2nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_3nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_4nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_5nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_6nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center">Industrial Training</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-center">1</th>
-                                    <td class="text-center">67-ELECTRICAL TECNOLOGY</td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
-                                    </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->civil_7nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
                                     <td class="text-center">Industrial Training</td>
                                 </tr>
+
                                 <tr>
-                                    <th scope="row" class="text-center">1</th>
+                                    <th scope="row" class="text-center">2</th>
                                     <td class="text-center">66-COMPUTER SCIENCE & TECHNOLOGY</td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_1st_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_2nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_3nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_4nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_5nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_6nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->computer_7nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
                                     <td class="text-center">Industrial Training</td>
                                 </tr>
+
                                 <tr>
-                                    <th scope="row" class="text-center">1</th>
+                                    <th scope="row" class="text-center">3</th>
+                                    <td class="text-center">67-ELECTRICAL TECNOLOGY</td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_1st_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_2nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_3nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_4nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_5nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_6nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electrical_7nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
+                                    </td>
+                                    <td class="text-center">Industrial Training</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row" class="text-center">4</th>
                                     <td class="text-center">68-ELECTRONICS TECHNOLOGY</td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_1st_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_2nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_3nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_4nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_5nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_6nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->electronics_7nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
                                     <td class="text-center">Industrial Training</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row" class="text-center">1</th>
+                                    <th scope="row" class="text-center">5</th>
                                     <td class="text-center">94-TELECOMMUNICATION TECHNOLOGY</td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_1st_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_2nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_3nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_4nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_5nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_6nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
-                                    <td class="text-center"><a href="#" class="btn btn-primary btn-sm">Download</a>
+                                    <td class="text-center"><a href="{{ asset($diplomaInEngineeringClassRoutine->telecommunication_7nd_semester_routine_image) }}" class="btn btn-primary btn-sm" download>Download</a>
                                     </td>
                                     <td class="text-center">Industrial Training</td>
                                 </tr>
