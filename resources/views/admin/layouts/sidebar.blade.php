@@ -157,8 +157,13 @@
                 </ul>
             </li>
 
-            <li class="active"><a class="nav-link" href="{{ route('admin.short-course-routine.index') }}"><i class="fas fa-cogs"></i>
+            <li class="active"><a class="nav-link" href="{{ route('admin.short-course-routine.index') }}"><i
+                        class="fas fa-cogs"></i>
                     <span>Short Course Routine</span></a></li>
+
+            <li class="active"><a class="nav-link" href="{{ route('admin.bteb-course-routine.index') }}"><i
+                        class="fas fa-cogs"></i>
+                    <span>BTEB Course Routine</span></a></li>
 
             {{-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i>

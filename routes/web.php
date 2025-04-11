@@ -96,4 +96,7 @@ Route::get('diploma-in-engineering-class-routine', [ClassRoutineController::clas
 /** Short Course Class Routine Routes */
 Route::get('short-course-class-routine', [ClassRoutineController::class, 'shortCourseClassRoutine'])->name('short-course-class-routine.index');
 
+/** Bteb Course Class Routine Routes */
+Route::get('bteb-course-class-routine', [ClassRoutineController::class, 'btebCourseClassRoutine'])->name('bteb-course-class-routine.index');
+
 require __DIR__.'/auth.php';

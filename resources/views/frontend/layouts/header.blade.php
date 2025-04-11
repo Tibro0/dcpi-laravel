@@ -100,7 +100,7 @@
                                     Engineering Class Routine</a>
                                 <a class="dropdown-item" href="{{ route('short-course-class-routine.index') }}">Short Course (360
                                     hours) Class Routine</a>
-                                <a class="dropdown-item" href="#">CBTA
+                                <a class="dropdown-item" href="{{ route('bteb-course-class-routine.index') }}">CBTA
                                     (BTEB/NSDA) Class Routine</a>
                             </div>
                         </li>

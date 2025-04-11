@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AllStudentController;
 use App\Http\Controllers\Admin\BannerFeatureController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BtebCourseController;
+use App\Http\Controllers\Admin\BtebCourseRoutineController;
 use App\Http\Controllers\Admin\CustomStaticPageController;
 use App\Http\Controllers\Admin\DiplomaClassRoutineController;
 use App\Http\Controllers\Admin\DiplomaEngineeringCourseController;
@@ -113,3 +114,6 @@ Route::put('diploma-class-routine-telecommunication/update', [DiplomaClassRoutin
 
 /** Short Course Routine All Route */
 Route::resource('short-course-routine', ShortCourseRoutineController::class);
+
+/** Bteb Course Routine All Route */
+Route::resource('bteb-course-routine', BtebCourseRoutineController::class);

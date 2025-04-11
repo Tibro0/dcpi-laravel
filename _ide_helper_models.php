@@ -150,6 +150,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourseRoutine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourseRoutine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BtebCourseRoutine query()
+ */
+	class BtebCourseRoutine extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string|null $key
  * @property string|null $value
@@ -565,6 +576,7 @@ namespace App\Models{
  * @property string $image
  * @property string $course_name
  * @property string $course_duration
+ * @property int $priority_number
  * @property int $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -576,6 +588,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine wherePriorityNumber($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereUpdatedAt($value)
  */
