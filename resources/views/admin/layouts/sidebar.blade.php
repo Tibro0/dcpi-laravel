@@ -145,14 +145,20 @@
                     </li>
                     <li class="active"><a class="nav-link" href="{{ route('admin.computer.index') }}">Computer</a>
                     </li>
-                    <li class="active"><a class="nav-link" href="{{ route('admin.electrical.index') }}">Electrical</a>
+                    <li class="active"><a class="nav-link"
+                            href="{{ route('admin.electrical.index') }}">Electrical</a>
                     </li>
-                    <li class="active"><a class="nav-link" href="{{ route('admin.electronics.index') }}">Electronics</a>
+                    <li class="active"><a class="nav-link"
+                            href="{{ route('admin.electronics.index') }}">Electronics</a>
                     </li>
-                    <li class="active"><a class="nav-link" href="{{ route('admin.telecommunication.index') }}">Telecommunication</a>
+                    <li class="active"><a class="nav-link"
+                            href="{{ route('admin.telecommunication.index') }}">Telecommunication</a>
                     </li>
                 </ul>
             </li>
+
+            <li class="active"><a class="nav-link" href="{{ route('admin.short-course-routine.index') }}"><i class="fas fa-cogs"></i>
+                    <span>Short Course Routine</span></a></li>
 
             {{-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i>

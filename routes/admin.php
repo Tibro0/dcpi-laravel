@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\ShortCourseController;
+use App\Http\Controllers\Admin\ShortCourseRoutineController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TeacherController;
@@ -109,3 +110,6 @@ Route::put('diploma-class-routine-electronics/update', [DiplomaClassRoutineContr
 
 Route::get('diploma-class-routine-telecommunication/index', [DiplomaClassRoutineController::class, 'telecommunicationIndex'])->name('telecommunication.index');
 Route::put('diploma-class-routine-telecommunication/update', [DiplomaClassRoutineController::class, 'telecommunicationUpdate'])->name('telecommunication.update');
+
+/** Short Course Routine All Route */
+Route::resource('short-course-routine', ShortCourseRoutineController::class);

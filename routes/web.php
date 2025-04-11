@@ -93,4 +93,7 @@ Route::post('subscribe-newsletter', [SubscribeController::class, 'subscribeNewsl
 /** Class Routine Routes */
 Route::get('diploma-in-engineering-class-routine', [ClassRoutineController::class, 'diplomaInEngineeringClassRoutine'])->name('diploma-in-engineering-class-routine.index');
 
+/** Short Course Class Routine Routes */
+Route::get('short-course-class-routine', [ClassRoutineController::class, 'shortCourseClassRoutine'])->name('short-course-class-routine.index');
+
 require __DIR__.'/auth.php';

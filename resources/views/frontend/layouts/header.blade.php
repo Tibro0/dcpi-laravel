@@ -98,7 +98,7 @@
                                 <a class="dropdown-item"
                                     href="{{ route('diploma-in-engineering-class-routine.index') }}">Diploma in
                                     Engineering Class Routine</a>
-                                <a class="dropdown-item" href="#">Short Course (360
+                                <a class="dropdown-item" href="{{ route('short-course-class-routine.index') }}">Short Course (360
                                     hours) Class Routine</a>
                                 <a class="dropdown-item" href="#">CBTA
                                     (BTEB/NSDA) Class Routine</a>

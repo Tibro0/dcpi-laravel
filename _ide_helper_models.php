@@ -208,9 +208,85 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string|null $civil_1st_semester_routine_image
+ * @property string|null $civil_2nd_semester_routine_image
+ * @property string|null $civil_3nd_semester_routine_image
+ * @property string|null $civil_4nd_semester_routine_image
+ * @property string|null $civil_5nd_semester_routine_image
+ * @property string|null $civil_6nd_semester_routine_image
+ * @property string|null $civil_7nd_semester_routine_image
+ * @property string|null $computer_1st_semester_routine_image
+ * @property string|null $computer_2nd_semester_routine_image
+ * @property string|null $computer_3nd_semester_routine_image
+ * @property string|null $computer_4nd_semester_routine_image
+ * @property string|null $computer_5nd_semester_routine_image
+ * @property string|null $computer_6nd_semester_routine_image
+ * @property string|null $computer_7nd_semester_routine_image
+ * @property string|null $electrical_1st_semester_routine_image
+ * @property string|null $electrical_2nd_semester_routine_image
+ * @property string|null $electrical_3nd_semester_routine_image
+ * @property string|null $electrical_4nd_semester_routine_image
+ * @property string|null $electrical_5nd_semester_routine_image
+ * @property string|null $electrical_6nd_semester_routine_image
+ * @property string|null $electrical_7nd_semester_routine_image
+ * @property string|null $electronics_1st_semester_routine_image
+ * @property string|null $electronics_2nd_semester_routine_image
+ * @property string|null $electronics_3nd_semester_routine_image
+ * @property string|null $electronics_4nd_semester_routine_image
+ * @property string|null $electronics_5nd_semester_routine_image
+ * @property string|null $electronics_6nd_semester_routine_image
+ * @property string|null $electronics_7nd_semester_routine_image
+ * @property string|null $telecommunication_1st_semester_routine_image
+ * @property string|null $telecommunication_2nd_semester_routine_image
+ * @property string|null $telecommunication_3nd_semester_routine_image
+ * @property string|null $telecommunication_4nd_semester_routine_image
+ * @property string|null $telecommunication_5nd_semester_routine_image
+ * @property string|null $telecommunication_6nd_semester_routine_image
+ * @property string|null $telecommunication_7nd_semester_routine_image
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil1stSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil2ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil3ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil4ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil5ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil6ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCivil7ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer1stSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer2ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer3ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer4ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer5ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer6ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereComputer7ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical1stSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical2ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical3ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical4ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical5ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical6ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectrical7ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics1stSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics2ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics3ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics4ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics5ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics6ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereElectronics7ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication1stSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication2ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication3ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication4ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication5ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication6ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereTelecommunication7ndSemesterRoutineImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|DiplomaInEngineeringClassRoutine whereUpdatedAt($value)
  */
 	class DiplomaInEngineeringClassRoutine extends \Eloquent {}
 }
@@ -479,6 +555,31 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourse whereUpdatedAt($value)
  */
 	class ShortCourse extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $image
+ * @property string $course_name
+ * @property string $course_duration
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereCourseDuration($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereCourseName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShortCourseRoutine whereUpdatedAt($value)
+ */
+	class ShortCourseRoutine extends \Eloquent {}
 }
 
 namespace App\Models{
