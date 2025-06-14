@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\ShortCourseController;
 use App\Http\Controllers\Admin\ShortCourseRoutineController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SocialLinkController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -117,3 +118,6 @@ Route::resource('short-course-routine', ShortCourseRoutineController::class);
 
 /** Bteb Course Routine All Route */
 Route::resource('bteb-course-routine', BtebCourseRoutineController::class);
+
+/** Social Link All Route */
+Route::resource('social-link', SocialLinkController::class);

@@ -88,19 +88,16 @@
                         . All Rights Reserved.
                     </p>
                 </div>
+                @php
+                $socialLinks = App\Models\SocialLink::where('status', 1)->orderBy('id', 'DESC')->get();
+                @endphp
                 <div class="col-sm-5 text-sm-right text-center">
                     <ul class="list-inline">
+                        @foreach ($socialLinks as $socialLink)
                         <li class="list-inline-item"><a class="d-inline-block p-2"
-                                href="https://www.facebook.com/themefisher"><i class="ti-facebook text-primary"></i></a>
+                                href="{{ $socialLink->url }}"><i class="{{ $socialLink->icon }} text-primary"></i></a>
                         </li>
-                        <li class="list-inline-item"><a class="d-inline-block p-2"
-                                href="https://www.twitter.com/themefisher"><i
-                                    class="ti-twitter-alt text-primary"></i></a></li>
-                        <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i
-                                    class="ti-instagram text-primary"></i></a></li>
-                        <li class="list-inline-item"><a class="d-inline-block p-2"
-                                href="https://dribbble.com/themefisher"><i class="ti-dribbble text-primary"></i></a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
