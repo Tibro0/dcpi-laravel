@@ -95,7 +95,7 @@
                     <ul class="list-inline">
                         @foreach ($socialLinks as $socialLink)
                         <li class="list-inline-item"><a class="d-inline-block p-2"
-                                href="{{ $socialLink->url }}"><i class="{{ $socialLink->icon }} text-primary"></i></a>
+                                target="_blank" href="{{ $socialLink->url }}"><i class="{{ $socialLink->icon }} text-primary"></i></a>
                         </li>
                         @endforeach
                     </ul>

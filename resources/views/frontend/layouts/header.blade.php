@@ -6,15 +6,16 @@
                 <div class="col-lg-4 text-center text-lg-left">
                     <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303
                         0266</a>
+                        @php
+                $socialLinks = App\Models\SocialLink::where('status', 1)->orderBy('id', 'DESC')->get();
+                @endphp
                     <ul class="list-inline d-inline">
-                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
-                                    class="ti-facebook"></i></a></li>
-                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
-                                    class="ti-twitter-alt"></i></a></li>
-                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
-                                    class="ti-linkedin"></i></a></li>
-                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
-                                    class="ti-instagram"></i></a></li>
+@foreach ($socialLinks as $socialLink)
+                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" target="_blank" href="{{ $socialLink->url }}"><i
+                                    class="{{ $socialLink->icon }}"></i></a></li>
+@endforeach
+
+
                     </ul>
                 </div>
                 <div class="col-lg-8 text-center text-lg-right">
