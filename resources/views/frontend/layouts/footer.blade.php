@@ -98,7 +98,6 @@
                                 href="{{ $socialLink->url }}"><i class="{{ $socialLink->icon }} text-primary"></i></a>
                         </li>
                         @endforeach
-                        
                     </ul>
                 </div>
             </div>
