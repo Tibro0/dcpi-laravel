@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             DiplomaEngineeringCourseSeeder::class,
             FrontPageCtaSectionSeeder::class,
             FrontPageSuccessStorySectionSeeder::class,
+            EventSeeder::class,
         ]);
     }
 }

@@ -49,11 +49,11 @@ class EventController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(1110,555);
-            $img->toPng()->save(base_path('public/uploads/event_image/'.$name_gen));
-            $save_url = 'uploads/event_image/'.$name_gen;
+            $img = $img->resize(1110, 555);
+            $img->toPng()->save(base_path('public/uploads/event_image/' . $name_gen));
+            $save_url = 'uploads/event_image/' . $name_gen;
 
             $event = new Event();
             $event->image = $save_url;
@@ -98,7 +98,7 @@ class EventController extends Controller
     {
         $request->validate([
             'image' => ['nullable', 'image', 'max:3000'],
-            'name' => ['required', 'max:255', 'unique:events,name,'.$id],
+            'name' => ['required', 'max:255', 'unique:events,name,' . $id],
             'location' => ['required', 'max:255'],
             'date' => ['required', 'max:255'],
             'time' => ['required', 'max:255'],
@@ -113,11 +113,11 @@ class EventController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(1110,555);
-            $img->toPng()->save(base_path('public/uploads/event_image/'.$name_gen));
-            $save_url = 'uploads/event_image/'.$name_gen;
+            $img = $img->resize(1110, 555);
+            $img->toPng()->save(base_path('public/uploads/event_image/' . $name_gen));
+            $save_url = 'uploads/event_image/' . $name_gen;
 
             $event = Event::findOrFail($id);
             $event->image = $save_url;
@@ -133,13 +133,13 @@ class EventController extends Controller
             $event->status = $request->status;
             $event->save();
 
-            if (file_exists($oldImage)) {
+            if (file_exists($oldImage !== 'frontend/images/events/event-1.jpg' || $oldImage !== 'frontend/images/events/event-2.jpg' || $oldImage !== 'frontend/images/events/event-3.jpg')) {
                 unlink($oldImage);
             }
 
             toastr()->success('Created Successfully!');
             return redirect()->route('admin.event.index');
-        }else{
+        } else {
             $event = Event::findOrFail($id);
             $event->name = $request->name;
             $event->slug = Str::slug($request->name);
@@ -164,9 +164,12 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         $event = Event::findOrFail($id);
-        unlink($event->image);
-        $event->delete();
 
+        if (file_exists($event !== 'frontend/images/events/event-1.jpg' || $event !== 'frontend/images/events/event-2.jpg' || $event !== 'frontend/images/events/event-3.jpg')) {
+            unlink($event->image);
+        }
+
+        $event->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
