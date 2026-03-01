@@ -10,8 +10,8 @@
             </div>
             <div class="col-lg-6 col-sm-8">
                 <div class="bg-white p-5">
-                    <h2 class="section-title">{!! $frontPageSuccessStorySection->title !!}</h2>
-                    <p>{!! $frontPageSuccessStorySection->description !!}</p>
+                    <h2 class="section-title">{!! @$frontPageSuccessStorySection->title !!}</h2>
+                    <p>{!! @$frontPageSuccessStorySection->description !!}</p>
                 </div>
             </div>
         </div>
