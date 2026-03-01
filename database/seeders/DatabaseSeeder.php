@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             SliderSeeder::class,
             BannerFeatureSeeder::class,
             FrontPageAboutUsSectionSeeder::class,
+            DiplomaEngineeringCourseSeeder::class,
         ]);
     }
 }
