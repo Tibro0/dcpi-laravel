@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             FrontPageAboutUsSectionSeeder::class,
             DiplomaEngineeringCourseSeeder::class,
             FrontPageCtaSectionSeeder::class,
+            FrontPageSuccessStorySectionSeeder::class,
         ]);
     }
 }
