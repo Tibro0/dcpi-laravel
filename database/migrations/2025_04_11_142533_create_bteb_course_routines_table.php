@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('course_name');
             $table->string('course_duration');
             $table->integer('priority_number');
-            $table->boolean('status')->default(1);
+            $table->boolean('status')->default(1)->comment('1=Active, 0=InActive');
             $table->timestamps();
         });
     }

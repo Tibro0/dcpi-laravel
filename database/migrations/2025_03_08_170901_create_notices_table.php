@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('description');
             $table->integer('priority_number');
-            $table->boolean('status')->default(1);
+            $table->boolean('status')->default(1)->comment('1=Active, 0=InActive');
             $table->timestamps();
         });
     }

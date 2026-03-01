@@ -20,6 +20,8 @@ class SliderSeeder extends Seeder
                 'button_text' => 'Apply now',
                 'button_url' => 'http://127.0.0.1:8000/',
                 'status' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'title' => 'Your bright future is our mission',
@@ -27,6 +29,8 @@ class SliderSeeder extends Seeder
                 'button_text' => 'Apply now',
                 'button_url' => 'http://127.0.0.1:8000/',
                 'status' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'title' => 'Your bright future is our mission',
@@ -34,6 +38,8 @@ class SliderSeeder extends Seeder
                 'button_text' => 'Apply now',
                 'button_url' => 'http://127.0.0.1:8000/',
                 'status' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ]);
     }

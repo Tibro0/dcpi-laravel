@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('icon');
             $table->string('title');
             $table->string('description');
-            $table->boolean('status')->default(1);
+            $table->boolean('status')->default(1)->comment('1=Active, 0=InActive');
             $table->timestamps();
         });
     }
