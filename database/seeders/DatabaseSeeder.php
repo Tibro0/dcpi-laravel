@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SliderSeeder::class,
             BannerFeatureSeeder::class,
+            FrontPageAboutUsSectionSeeder::class,
         ]);
     }
 }
