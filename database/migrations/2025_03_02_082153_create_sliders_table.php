@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('button_text')->nullable();
             $table->string('button_url')->nullable();
-            $table->boolean('status')->default(1);
+            $table->boolean('status')->default(1)->comment('1=Active, 0=InActive');
             $table->timestamps();
         });
     }
