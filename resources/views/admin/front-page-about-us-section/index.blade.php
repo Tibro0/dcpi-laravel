@@ -13,7 +13,6 @@
         <div class="card card-primary">
             <div class="card-header">
                 <h4>Updated Front Page About Us Section</h4>
-
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.front-page-about-us-section.update') }}" method="POST"

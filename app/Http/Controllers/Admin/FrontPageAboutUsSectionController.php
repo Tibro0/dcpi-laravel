@@ -10,12 +10,14 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class FrontPageAboutUsSectionController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $frontPageAboutUsSection = FrontPageAboutUsSection::first();
         return view('admin.front-page-about-us-section.index', compact('frontPageAboutUsSection'));
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $request->validate([
             'image' => ['nullable', 'image', 'max:2000'],
             'title' => ['required', 'max:255'],
@@ -28,11 +30,11 @@ class FrontPageAboutUsSectionController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(816,504);
-            $img->toPng()->save(base_path('public/uploads/front_page_about_us_section_image/'.$name_gen));
-            $save_url = 'uploads/front_page_about_us_section_image/'.$name_gen;
+            $img = $img->resize(816, 504);
+            $img->toPng()->save(base_path('public/uploads/front_page_about_us_section_image/' . $name_gen));
+            $save_url = 'uploads/front_page_about_us_section_image/' . $name_gen;
 
             FrontPageAboutUsSection::UpdateOrCreate(
                 ['id' => 1],
@@ -45,13 +47,13 @@ class FrontPageAboutUsSectionController extends Controller
                 ]
             );
 
-            if (file_exists($oldImage)) {
+            if (file_exists($oldImage !== 'frontend/images/about/about-us.jpg')) {
                 unlink($oldImage);
             }
 
             toastr()->success('Updated Successfully');
             return redirect()->back();
-        }else{
+        } else {
             FrontPageAboutUsSection::UpdateOrCreate(
                 ['id' => 1],
                 [
