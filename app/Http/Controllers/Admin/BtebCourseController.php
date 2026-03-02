@@ -34,7 +34,7 @@ class BtebCourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' =>['required', 'image', 'max:2000'],
+            'image' => ['required', 'image', 'max:2000'],
             'name' => ['required', 'max:255', 'unique:bteb_courses,name'],
             'month' => ['required', 'max:255'],
             'duration' => ['required', 'max:255'],
@@ -48,11 +48,11 @@ class BtebCourseController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(1110,555);
-            $img->toPng()->save(base_path('public/uploads/bteb_course_image/'.$name_gen));
-            $save_url = 'uploads/bteb_course_image/'.$name_gen;
+            $img = $img->resize(1110, 555);
+            $img->toPng()->save(base_path('public/uploads/bteb_course_image/' . $name_gen));
+            $save_url = 'uploads/bteb_course_image/' . $name_gen;
 
             $btebCourse = new BtebCourse();
             $btebCourse->image = $save_url;
@@ -95,8 +95,8 @@ class BtebCourseController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'image' =>['nullable', 'image', 'max:2000'],
-            'name' => ['required', 'max:255', 'unique:bteb_courses,name,'.$id],
+            'image' => ['nullable', 'image', 'max:2000'],
+            'name' => ['required', 'max:255', 'unique:bteb_courses,name,' . $id],
             'month' => ['required', 'max:255'],
             'duration' => ['required', 'max:255'],
             'course_fee' => ['required', 'max:255'],
@@ -110,11 +110,11 @@ class BtebCourseController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(1110,555);
-            $img->toPng()->save(base_path('public/uploads/bteb_course_image/'.$name_gen));
-            $save_url = 'uploads/bteb_course_image/'.$name_gen;
+            $img = $img->resize(1110, 555);
+            $img->toPng()->save(base_path('public/uploads/bteb_course_image/' . $name_gen));
+            $save_url = 'uploads/bteb_course_image/' . $name_gen;
 
             $btebCourse = BtebCourse::findOrFail($id);
             $btebCourse->image = $save_url;
@@ -129,13 +129,22 @@ class BtebCourseController extends Controller
             $btebCourse->status = $request->status;
             $btebCourse->save();
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+                'frontend/images/courses/course-1.jpg',
+                'frontend/images/courses/course-2.jpg',
+                'frontend/images/courses/course-3.jpg',
+                'frontend/images/courses/course-4.jpg',
+                'frontend/images/courses/course-5.jpg',
+                'frontend/images/courses/course-6.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
             toastr()->success('Updated Successfully');
             return redirect()->route('admin.bteb-course.index');
-        }else{
+        } else {
             $btebCourse = BtebCourse::findOrFail($id);
             $btebCourse->name = $request->name;
             $btebCourse->slug = Str::slug($request->name);
@@ -159,9 +168,21 @@ class BtebCourseController extends Controller
     public function destroy(string $id)
     {
         $btebCourse = BtebCourse::findOrFail($id);
-        unlink($btebCourse->image);
-        $btebCourse->delete();
 
+        $defaultImages = [
+            'frontend/images/courses/course-1.jpg',
+            'frontend/images/courses/course-2.jpg',
+            'frontend/images/courses/course-3.jpg',
+            'frontend/images/courses/course-4.jpg',
+            'frontend/images/courses/course-5.jpg',
+            'frontend/images/courses/course-6.jpg',
+        ];
+
+        if ($btebCourse->image && !in_array($btebCourse->image, $defaultImages) && file_exists($btebCourse->image)) {
+            unlink($btebCourse->image);
+        }
+
+        $btebCourse->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
