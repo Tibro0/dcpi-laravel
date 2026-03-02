@@ -55,7 +55,11 @@ class AboutUsController extends Controller
                 ]
             );
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+                'frontend/images/about/about-page.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
