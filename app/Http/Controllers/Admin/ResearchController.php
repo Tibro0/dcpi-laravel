@@ -43,11 +43,11 @@ class ResearchController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(350,319);
-            $img->toPng()->save(base_path('public/uploads/research_image/'.$name_gen));
-            $save_url = 'uploads/research_image/'.$name_gen;
+            $img = $img->resize(350, 319);
+            $img->toPng()->save(base_path('public/uploads/research_image/' . $name_gen));
+            $save_url = 'uploads/research_image/' . $name_gen;
 
             $research = new Research();
             $research->image = $save_url;
@@ -96,11 +96,11 @@ class ResearchController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(350,319);
-            $img->toPng()->save(base_path('public/uploads/research_image/'.$name_gen));
-            $save_url = 'uploads/research_image/'.$name_gen;
+            $img = $img->resize(350, 319);
+            $img->toPng()->save(base_path('public/uploads/research_image/' . $name_gen));
+            $save_url = 'uploads/research_image/' . $name_gen;
 
             $research = Research::findOrFail($id);
             $research->image = $save_url;
@@ -110,13 +110,22 @@ class ResearchController extends Controller
             $research->status = $request->status;
             $research->save();
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+                'frontend/images/research/research-1.jpg',
+                'frontend/images/research/research-2.jpg',
+                'frontend/images/research/research-3.jpg',
+                'frontend/images/research/research-4.jpg',
+                'frontend/images/research/research-5.jpg',
+                'frontend/images/research/research-6.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
             toastr()->success('Updated Successfully');
             return redirect()->route('admin.research.index');
-        }else{
+        } else {
             $research = Research::findOrFail($id);
             $research->title = $request->title;
             $research->description = $request->description;
@@ -135,9 +144,21 @@ class ResearchController extends Controller
     public function destroy(string $id)
     {
         $research = Research::findOrFail($id);
-        unlink($research->image);
-        $research->delete();
 
+        $defaultImages = [
+            'frontend/images/research/research-1.jpg',
+            'frontend/images/research/research-2.jpg',
+            'frontend/images/research/research-3.jpg',
+            'frontend/images/research/research-4.jpg',
+            'frontend/images/research/research-5.jpg',
+            'frontend/images/research/research-6.jpg',
+        ];
+
+        if ($research->image && !in_array($research->image, $defaultImages) && file_exists($research->image)) {
+            unlink($research->image);
+        }
+
+        $research->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }

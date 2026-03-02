@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             TeacherSeeder::class,
             BlogSeeder::class,
             AboutUsSeeder::class,
+            ResearchSeeder::class,
         ]);
     }
 }
