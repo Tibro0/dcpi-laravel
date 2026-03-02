@@ -129,7 +129,16 @@ class ShortCourseController extends Controller
             $shortCourse->status = $request->status;
             $shortCourse->save();
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+            'frontend/images/courses/course-1.jpg',
+            'frontend/images/courses/course-2.jpg',
+            'frontend/images/courses/course-3.jpg',
+            'frontend/images/courses/course-4.jpg',
+            'frontend/images/courses/course-5.jpg',
+            'frontend/images/courses/course-6.jpg',
+        ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
@@ -159,9 +168,21 @@ class ShortCourseController extends Controller
     public function destroy(string $id)
     {
         $shortCourse = ShortCourse::findOrFail($id);
-        unlink($shortCourse->image);
-        $shortCourse->delete();
 
+        $defaultImages = [
+            'frontend/images/courses/course-1.jpg',
+            'frontend/images/courses/course-2.jpg',
+            'frontend/images/courses/course-3.jpg',
+            'frontend/images/courses/course-4.jpg',
+            'frontend/images/courses/course-5.jpg',
+            'frontend/images/courses/course-6.jpg',
+        ];
+
+        if ($shortCourse->image && !in_array($shortCourse->image, $defaultImages) && file_exists($shortCourse->image)) {
+            unlink($shortCourse->image);
+        }
+
+        $shortCourse->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
