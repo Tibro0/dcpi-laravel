@@ -43,7 +43,11 @@ class FrontPageSuccessStorySectionController extends Controller
                 ]
             );
 
-            if (file_exists($oldImage !== 'frontend/images/backgrounds/success-story.jpg')) {
+            $defaultImages = [
+                'frontend/images/backgrounds/success-story.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 

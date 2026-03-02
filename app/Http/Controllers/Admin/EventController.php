@@ -133,7 +133,13 @@ class EventController extends Controller
             $event->status = $request->status;
             $event->save();
 
-            if (file_exists($oldImage !== 'frontend/images/events/event-1.jpg' || $oldImage !== 'frontend/images/events/event-2.jpg' || $oldImage !== 'frontend/images/events/event-3.jpg')) {
+            $defaultImages = [
+            'frontend/images/events/event-1.jpg',
+            'frontend/images/events/event-2.jpg',
+            'frontend/images/events/event-3.jpg',
+        ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
@@ -165,7 +171,13 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
 
-        if (file_exists($event !== 'frontend/images/events/event-1.jpg' || $event !== 'frontend/images/events/event-2.jpg' || $event !== 'frontend/images/events/event-3.jpg')) {
+        $defaultImages = [
+            'frontend/images/events/event-1.jpg',
+            'frontend/images/events/event-2.jpg',
+            'frontend/images/events/event-3.jpg',
+        ];
+
+        if ($event->image && !in_array($event->image, $defaultImages) && file_exists($event->image)) {
             unlink($event->image);
         }
 

@@ -130,7 +130,16 @@ class DiplomaEngineeringCourseController extends Controller
             $diplomaEngineeringCourse->status = $request->status;
             $diplomaEngineeringCourse->save();
 
-            if (file_exists($oldImage !== 'frontend/images/courses/course-1.jpg' || $oldImage !== 'frontend/images/courses/course-2.jpg' || $oldImage !== 'frontend/images/courses/course-3.jpg' || $oldImage !== 'frontend/images/courses/course-4.jpg' || $oldImage !== 'frontend/images/courses/course-5.jpg' || $oldImage !== 'frontend/images/courses/course-6.jpg')) {
+            $defaultImages = [
+                'frontend/images/courses/course-1.jpg',
+                'frontend/images/courses/course-2.jpg',
+                'frontend/images/courses/course-3.jpg',
+                'frontend/images/courses/course-4.jpg',
+                'frontend/images/courses/course-5.jpg',
+                'frontend/images/courses/course-6.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
@@ -161,7 +170,16 @@ class DiplomaEngineeringCourseController extends Controller
     {
         $diplomaEngineeringCourse = DiplomaEngineeringCourse::findOrFail($id);
 
-        if (file_exists($diplomaEngineeringCourse !== 'frontend/images/courses/course-1.jpg' || $diplomaEngineeringCourse !== 'frontend/images/courses/course-2.jpg' || $diplomaEngineeringCourse !== 'frontend/images/courses/course-3.jpg' || $diplomaEngineeringCourse !== 'frontend/images/courses/course-4.jpg' || $diplomaEngineeringCourse !== 'frontend/images/courses/course-5.jpg' || $diplomaEngineeringCourse !== 'frontend/images/courses/course-6.jpg')) {
+        $defaultImages = [
+            'frontend/images/courses/course-1.jpg',
+            'frontend/images/courses/course-2.jpg',
+            'frontend/images/courses/course-3.jpg',
+            'frontend/images/courses/course-4.jpg',
+            'frontend/images/courses/course-5.jpg',
+            'frontend/images/courses/course-6.jpg',
+        ];
+
+        if ($diplomaEngineeringCourse->image && !in_array($diplomaEngineeringCourse->image, $defaultImages) && file_exists($diplomaEngineeringCourse->image)) {
             unlink($diplomaEngineeringCourse->image);
         }
 

@@ -39,7 +39,11 @@ class ProfileController extends Controller
             $user->email = $request->email;
             $user->save();
 
-            if (file_exists($oldImage !== '/uploads/avatar.png')) {
+            $defaultImages = [
+                'uploads/avatar.png',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 

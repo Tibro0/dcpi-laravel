@@ -47,7 +47,11 @@ class FrontPageAboutUsSectionController extends Controller
                 ]
             );
 
-            if (file_exists($oldImage !== 'frontend/images/about/about-us.jpg')) {
+            $defaultImages = [
+                'frontend/images/about/about-us.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
