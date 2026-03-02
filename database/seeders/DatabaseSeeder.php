@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             FrontPageCtaSectionSeeder::class,
             FrontPageSuccessStorySectionSeeder::class,
             EventSeeder::class,
+            TeacherSeeder::class,
         ]);
     }
 }

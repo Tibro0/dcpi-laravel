@@ -57,11 +57,11 @@ class TeacherController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(445,501);
-            $img->toPng()->save(base_path('public/uploads/teacher_image/'.$name_gen));
-            $save_url = 'uploads/teacher_image/'.$name_gen;
+            $img = $img->resize(445, 501);
+            $img->toPng()->save(base_path('public/uploads/teacher_image/' . $name_gen));
+            $save_url = 'uploads/teacher_image/' . $name_gen;
 
             $teacher = new Teacher();
             $teacher->image = $save_url;
@@ -114,7 +114,7 @@ class TeacherController extends Controller
     {
         $request->validate([
             'image' => ['nullable', 'image', 'max:3000'],
-            'name' => ['required', 'max:255', 'unique:teachers,name,'.$id],
+            'name' => ['required', 'max:255', 'unique:teachers,name,' . $id],
             'designation' => ['required', 'max:255'],
             'email' => ['nullable', 'email', 'max:255'],
             'whatsapp' => ['nullable', 'max:255'],
@@ -137,11 +137,11 @@ class TeacherController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(445,501);
-            $img->toPng()->save(base_path('public/uploads/teacher_image/'.$name_gen));
-            $save_url = 'uploads/teacher_image/'.$name_gen;
+            $img = $img->resize(445, 501);
+            $img->toPng()->save(base_path('public/uploads/teacher_image/' . $name_gen));
+            $save_url = 'uploads/teacher_image/' . $name_gen;
 
             $teacher = Teacher::findOrFail($id);
             $teacher->image = $save_url;
@@ -165,13 +165,19 @@ class TeacherController extends Controller
             $teacher->status = $request->status;
             $teacher->save();
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+                'frontend/images/teachers/teacher-1.jpg',
+                'frontend/images/teachers/teacher-2.jpg',
+                'frontend/images/teachers/teacher-3.jpg'
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
             toastr()->success('Created Successfully');
             return redirect()->route('admin.teacher.index');
-        }else{
+        } else {
             $teacher = Teacher::findOrFail($id);
             $teacher->name = $request->name;
             $teacher->slug = Str::slug($request->name);
@@ -204,9 +210,18 @@ class TeacherController extends Controller
     public function destroy(string $id)
     {
         $teacher = Teacher::findOrFail($id);
-        unlink($teacher->image);
-        $teacher->delete();
 
+        $defaultImages = [
+            'frontend/images/teachers/teacher-1.jpg',
+            'frontend/images/teachers/teacher-2.jpg',
+            'frontend/images/teachers/teacher-3.jpg'
+        ];
+
+        if ($teacher->image && !in_array($teacher->image, $defaultImages) && file_exists($teacher->image)) {
+            unlink($teacher->image);
+        }
+
+        $teacher->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
