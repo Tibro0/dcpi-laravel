@@ -45,11 +45,11 @@ class NoticeController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(2480,3508);
-            $img->toPng()->save(base_path('public/uploads/notice_image/'.$name_gen));
-            $save_url = 'uploads/notice_image/'.$name_gen;
+            $img = $img->resize(2480, 3508);
+            $img->toPng()->save(base_path('public/uploads/notice_image/' . $name_gen));
+            $save_url = 'uploads/notice_image/' . $name_gen;
 
             $notice = new Notice();
             $notice->image = $save_url;
@@ -90,7 +90,7 @@ class NoticeController extends Controller
     {
         $request->validate([
             'image' => ['nullable', 'image', 'max:3000'],
-            'title' => ['required', 'max:255', 'unique:notices,title,'.$id],
+            'title' => ['required', 'max:255', 'unique:notices,title,' . $id],
             'date' => ['required', 'date', 'max:255'],
             'description' => ['required', 'max:255'],
             'priority_number' => ['required', 'integer'],
@@ -101,11 +101,11 @@ class NoticeController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(2480,3508);
-            $img->toPng()->save(base_path('public/uploads/notice_image/'.$name_gen));
-            $save_url = 'uploads/notice_image/'.$name_gen;
+            $img = $img->resize(2480, 3508);
+            $img->toPng()->save(base_path('public/uploads/notice_image/' . $name_gen));
+            $save_url = 'uploads/notice_image/' . $name_gen;
 
             $notice = Notice::findOrFail($id);
             $notice->image = $save_url;
@@ -117,13 +117,18 @@ class NoticeController extends Controller
             $notice->status = $request->status;
             $notice->save();
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+                'frontend/images/events/event-1.jpg',
+                'frontend/images/events/event-2.jpg',
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
             toastr()->success('Updated Successfully!');
             return redirect()->route('admin.notice.index');
-        }else{
+        } else {
             $notice = Notice::findOrFail($id);
             $notice->title = $request->title;
             $notice->slug = Str::slug($request->title);
@@ -144,9 +149,17 @@ class NoticeController extends Controller
     public function destroy(string $id)
     {
         $notice = Notice::findOrFail($id);
-        unlink($notice->image);
-        $notice->delete();
 
+        $defaultImages = [
+            'frontend/images/events/event-1.jpg',
+            'frontend/images/events/event-2.jpg',
+        ];
+
+        if ($notice->image && !in_array($notice->image, $defaultImages) && file_exists($notice->image)) {
+            unlink($notice->image);
+        }
+
+        $notice->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
