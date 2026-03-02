@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             NoticeSeeder::class,
             ShortCourseSeeder::class,
             BtebCourseSeeder::class,
+            ManagementCommitteeSeeder::class,
         ]);
     }
 }

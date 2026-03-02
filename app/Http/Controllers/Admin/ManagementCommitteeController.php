@@ -57,11 +57,11 @@ class ManagementCommitteeController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(445,501);
-            $img->toPng()->save(base_path('public/uploads/management_committee_image/'.$name_gen));
-            $save_url = 'uploads/management_committee_image/'.$name_gen;
+            $img = $img->resize(445, 501);
+            $img->toPng()->save(base_path('public/uploads/management_committee_image/' . $name_gen));
+            $save_url = 'uploads/management_committee_image/' . $name_gen;
 
             $managementCommittee = new ManagementCommittee();
             $managementCommittee->image = $save_url;
@@ -114,7 +114,7 @@ class ManagementCommitteeController extends Controller
     {
         $request->validate([
             'image' => ['nullable', 'image', 'max:3000'],
-            'name' => ['required', 'max:255', 'unique:management_committees,name,'.$id],
+            'name' => ['required', 'max:255', 'unique:management_committees,name,' . $id],
             'designation' => ['required', 'max:255'],
             'email' => ['nullable', 'email', 'max:255'],
             'whatsapp' => ['nullable', 'max:255'],
@@ -137,11 +137,11 @@ class ManagementCommitteeController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(445,501);
-            $img->toPng()->save(base_path('public/uploads/management_committee_image/'.$name_gen));
-            $save_url = 'uploads/management_committee_image/'.$name_gen;
+            $img = $img->resize(445, 501);
+            $img->toPng()->save(base_path('public/uploads/management_committee_image/' . $name_gen));
+            $save_url = 'uploads/management_committee_image/' . $name_gen;
 
             $managementCommittee = ManagementCommittee::findOrFail($id);
             $managementCommittee->image = $save_url;
@@ -165,13 +165,19 @@ class ManagementCommitteeController extends Controller
             $managementCommittee->status = $request->status;
             $managementCommittee->save();
 
-            if (file_exists($oldImage)) {
+            $defaultImages = [
+                'frontend/images/teachers/teacher-1.jpg',
+                'frontend/images/teachers/teacher-2.jpg',
+                'frontend/images/teachers/teacher-3.jpg'
+            ];
+
+            if ($oldImage && !in_array($oldImage, $defaultImages) && file_exists($oldImage)) {
                 unlink($oldImage);
             }
 
             toastr()->success('Created Successfully');
             return redirect()->route('admin.management-committee.index');
-        }else{
+        } else {
             $managementCommittee = ManagementCommittee::findOrFail($id);
             $managementCommittee->name = $request->name;
             $managementCommittee->slug = Str::slug($request->name);
@@ -204,9 +210,18 @@ class ManagementCommitteeController extends Controller
     public function destroy(string $id)
     {
         $managementCommittee = ManagementCommittee::findOrFail($id);
-        unlink($managementCommittee->image);
-        $managementCommittee->delete();
 
+        $defaultImages = [
+            'frontend/images/teachers/teacher-1.jpg',
+            'frontend/images/teachers/teacher-2.jpg',
+            'frontend/images/teachers/teacher-3.jpg'
+        ];
+
+        if ($managementCommittee->image && !in_array($managementCommittee->image, $defaultImages) && file_exists($managementCommittee->image)) {
+            unlink($managementCommittee->image);
+        }
+
+        $managementCommittee->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
