@@ -33,12 +33,12 @@ class DatabaseSeeder extends Seeder
             SubscriberSeeder::class,
 
             CustomStaticPageSeeder::class,
-            
+
             // Controller Not Updated Start
             DiplomaInEngineeringClassRoutineSeeder::class,
+            // Controller Not Updated End
             ShortCourseRoutineSeeder::class,
             BtebCourseRoutineSeeder::class,
-            // Controller Not Updated End
             SocialLinkSeeder::class,
         ]);
     }
