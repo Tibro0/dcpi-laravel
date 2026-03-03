@@ -10,12 +10,14 @@ use Illuminate\Http\Request;
 class DiplomaClassRoutineController extends Controller
 {
     use ImageUploadTrait;
-    public function civilIndex(){
+    public function civilIndex()
+    {
         $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
         return view('admin.diploma-class-routine.civil-index', compact('diplomaClassRoutine'));
     }
 
-    public function civilUpdate(Request $request){
+    public function civilUpdate(Request $request)
+    {
         $request->validate([
             'civil_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
             'civil_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
@@ -27,7 +29,23 @@ class DiplomaClassRoutineController extends Controller
         ]);
         $ClassRoutineImage = DiplomaInEngineeringClassRoutine::findOrFail(1);
 
-        $civil_1st_semester_routine_image = $this->updateImage($request, 'civil_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->civil_1st_semester_routine_image);
+        $defaultImages = [
+            'frontend/images/events/event-1.jpg',
+        ];
+
+        if ($request->hasFile('civil_1st_semester_routine_image')) {
+            $isDefaultImage = in_array($ClassRoutineImage->civil_1st_semester_routine_image, $defaultImages);
+
+            if (!$isDefaultImage) {
+                $civil_1st_semester_routine_image = $this->updateImage($request, 'civil_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->civil_1st_semester_routine_image);
+            } else {
+                $civil_1st_semester_routine_image = $this->uploadImage($request, 'civil_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine');
+            }
+
+            $ClassRoutineImage->civil_1st_semester_routine_image = $civil_1st_semester_routine_image;
+        }
+
+        // $civil_1st_semester_routine_image = $this->updateImage($request, 'civil_1st_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->civil_1st_semester_routine_image);
 
         $civil_2nd_semester_routine_image = $this->updateImage($request, 'civil_2nd_semester_routine_image', 'uploads/diplomaIn_engineering_class_routine', $ClassRoutineImage->civil_2nd_semester_routine_image);
 
@@ -64,12 +82,14 @@ class DiplomaClassRoutineController extends Controller
         return redirect()->back();
     }
 
-    public function computerIndex(){
+    public function computerIndex()
+    {
         $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
         return view('admin.diploma-class-routine.computer-index', compact('diplomaClassRoutine'));
     }
 
-    public function computerUpdate(Request $request){
+    public function computerUpdate(Request $request)
+    {
         $request->validate([
             'computer_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
             'computer_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
@@ -118,12 +138,14 @@ class DiplomaClassRoutineController extends Controller
         return redirect()->back();
     }
 
-    public function electricalIndex(){
+    public function electricalIndex()
+    {
         $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
         return view('admin.diploma-class-routine.electrical-index', compact('diplomaClassRoutine'));
     }
 
-    public function electricalUpdate(Request $request){
+    public function electricalUpdate(Request $request)
+    {
         $request->validate([
             'electrical_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
             'electrical_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
@@ -172,12 +194,14 @@ class DiplomaClassRoutineController extends Controller
         return redirect()->back();
     }
 
-    public function electronicsIndex(){
+    public function electronicsIndex()
+    {
         $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
         return view('admin.diploma-class-routine.electronics-index', compact('diplomaClassRoutine'));
     }
 
-    public function electronicsUpdate(Request $request){
+    public function electronicsUpdate(Request $request)
+    {
         $request->validate([
             'electronics_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
             'electronics_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
@@ -226,12 +250,14 @@ class DiplomaClassRoutineController extends Controller
         return redirect()->back();
     }
 
-    public function telecommunicationIndex(){
+    public function telecommunicationIndex()
+    {
         $diplomaClassRoutine = DiplomaInEngineeringClassRoutine::first();
         return view('admin.diploma-class-routine.telecommunication-index', compact('diplomaClassRoutine'));
     }
 
-    public function telecommunicationUpdate(Request $request){
+    public function telecommunicationUpdate(Request $request)
+    {
         $request->validate([
             'telecommunication_1st_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
             'telecommunication_2nd_semester_routine_image' => ['nullable', 'mimes:png,pdf', 'max:3000'],
