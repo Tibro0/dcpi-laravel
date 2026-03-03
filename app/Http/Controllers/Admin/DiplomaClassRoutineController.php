@@ -51,14 +51,14 @@ class DiplomaClassRoutineController extends Controller
                 $isDefaultImage = in_array($oldImage, $defaultImages);
 
                 if (!$isDefaultImage && $oldImage) {
-                    // রিয়েল ইমেজ থাকলে ডিলিট করে নতুন আপলোড
+                    // if real image exit then update new image
                     $data[$fieldName] = $this->updateImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine', $oldImage);
                 } else {
-                    // ডিফল্ট ইমেজ বা null থাকলে শুধু নতুন আপলোড
+                    // if default image is null then update new image
                     $data[$fieldName] = $this->uploadImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine');
                 }
             } else {
-                // ফাইল না থাকলে পুরোনো ভ্যালু রাখুন
+                // if user file not uploaded then old value insert
                 $data[$fieldName] = $classRoutine->$fieldName;
             }
         }
@@ -110,14 +110,14 @@ class DiplomaClassRoutineController extends Controller
                 $isDefaultImage = in_array($oldImage, $defaultImages);
 
                 if (!$isDefaultImage && $oldImage) {
-                    // রিয়েল ইমেজ থাকলে ডিলিট করে নতুন আপলোড
+                    // if real image exit then update new image
                     $data[$fieldName] = $this->updateImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine', $oldImage);
                 } else {
-                    // ডিফল্ট ইমেজ বা null থাকলে শুধু নতুন আপলোড
+                    // if default image is null then update new image
                     $data[$fieldName] = $this->uploadImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine');
                 }
             } else {
-                // ফাইল না থাকলে পুরোনো ভ্যালু রাখুন
+                // if user file not uploaded then old value insert
                 $data[$fieldName] = $classRoutine->$fieldName;
             }
         }
@@ -169,14 +169,14 @@ class DiplomaClassRoutineController extends Controller
                 $isDefaultImage = in_array($oldImage, $defaultImages);
 
                 if (!$isDefaultImage && $oldImage) {
-                    // রিয়েল ইমেজ থাকলে ডিলিট করে নতুন আপলোড
+                    // if real image exit then update new image
                     $data[$fieldName] = $this->updateImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine', $oldImage);
                 } else {
-                    // ডিফল্ট ইমেজ বা null থাকলে শুধু নতুন আপলোড
+                    // if default image is null then update new image
                     $data[$fieldName] = $this->uploadImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine');
                 }
             } else {
-                // ফাইল না থাকলে পুরোনো ভ্যালু রাখুন
+                // if user file not uploaded then old value insert
                 $data[$fieldName] = $classRoutine->$fieldName;
             }
         }
@@ -228,14 +228,14 @@ class DiplomaClassRoutineController extends Controller
                 $isDefaultImage = in_array($oldImage, $defaultImages);
 
                 if (!$isDefaultImage && $oldImage) {
-                    // রিয়েল ইমেজ থাকলে ডিলিট করে নতুন আপলোড
+                    // if real image exit then update new image
                     $data[$fieldName] = $this->updateImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine', $oldImage);
                 } else {
-                    // ডিফল্ট ইমেজ বা null থাকলে শুধু নতুন আপলোড
+                    // if default image is null then update new image
                     $data[$fieldName] = $this->uploadImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine');
                 }
             } else {
-                // ফাইল না থাকলে পুরোনো ভ্যালু রাখুন
+                // if user file not uploaded then old value insert
                 $data[$fieldName] = $classRoutine->$fieldName;
             }
         }
@@ -287,14 +287,14 @@ class DiplomaClassRoutineController extends Controller
                 $isDefaultImage = in_array($oldImage, $defaultImages);
 
                 if (!$isDefaultImage && $oldImage) {
-                    // রিয়েল ইমেজ থাকলে ডিলিট করে নতুন আপলোড
+                    // if real image exit then update new image
                     $data[$fieldName] = $this->updateImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine', $oldImage);
                 } else {
-                    // ডিফল্ট ইমেজ বা null থাকলে শুধু নতুন আপলোড
+                    // if default image is null then update new image
                     $data[$fieldName] = $this->uploadImage($request, $fieldName, 'uploads/diplomaIn_engineering_class_routine');
                 }
             } else {
-                // ফাইল না থাকলে পুরোনো ভ্যালু রাখুন
+                // if user file not uploaded then old value insert
                 $data[$fieldName] = $classRoutine->$fieldName;
             }
         }
