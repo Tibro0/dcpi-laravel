@@ -30,6 +30,11 @@ class DatabaseSeeder extends Seeder
             ShortCourseSeeder::class,
             BtebCourseSeeder::class,
             ManagementCommitteeSeeder::class,
+            SubscriberSeeder::class,
+
+            CustomStaticPageSeeder::class,
+
+            DiplomaInEngineeringClassRoutineSeeder::class,
         ]);
     }
 }
