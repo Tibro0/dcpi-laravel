@@ -79,7 +79,7 @@ class BtebCourseRoutineController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'image' => ['required', 'mimes:png,pdf'],
+            'image' => ['nullable', 'mimes:png,pdf'],
             'course_name' => ['required', 'max:255'],
             'course_duration' => ['required', 'max:255'],
             'priority_number' => ['required', 'integer'],
@@ -88,10 +88,28 @@ class BtebCourseRoutineController extends Controller
 
         $btebCourseRoutine = BtebCourseRoutine::findOrFail($id);
 
-        /** Handle file upload */
-        $imagePath = $this->updateImage($request, 'image', 'uploads/bteb_course_routine', $btebCourseRoutine->image);
+        $defaultImages = [
+            'frontend/images/courses/course-1.jpg',
+            'frontend/images/courses/course-2.jpg',
+            'frontend/images/courses/course-3.jpg',
+            'frontend/images/courses/course-4.jpg',
+            'frontend/images/courses/course-5.jpg',
+            'frontend/images/courses/course-6.jpg',
+        ];
 
-        $btebCourseRoutine->image = empty(!$imagePath) ? $imagePath : $btebCourseRoutine->image;
+
+        if ($request->hasFile('image')) {
+            $isDefaultImage = in_array($btebCourseRoutine->image, $defaultImages);
+
+            if (!$isDefaultImage) {
+                $imagePath = $this->updateImage($request, 'image', 'uploads/bteb_course_routine', $btebCourseRoutine->image);
+            } else {
+                $imagePath = $this->uploadImage($request, 'image', 'uploads/bteb_course_routine');
+            }
+
+            $btebCourseRoutine->image = $imagePath;
+        }
+
         $btebCourseRoutine->course_name = $request->course_name;
         $btebCourseRoutine->course_duration = $request->course_duration;
         $btebCourseRoutine->priority_number = $request->priority_number;
@@ -108,9 +126,21 @@ class BtebCourseRoutineController extends Controller
     public function destroy(string $id)
     {
         $btebCourseRoutine = BtebCourseRoutine::findOrFail($id);
-        unlink($btebCourseRoutine->image);
-        $btebCourseRoutine->delete();
 
+        $defaultImages = [
+            'frontend/images/courses/course-1.jpg',
+            'frontend/images/courses/course-2.jpg',
+            'frontend/images/courses/course-3.jpg',
+            'frontend/images/courses/course-4.jpg',
+            'frontend/images/courses/course-5.jpg',
+            'frontend/images/courses/course-6.jpg',
+        ];
+
+        if ($btebCourseRoutine->image && !in_array($btebCourseRoutine->image, $defaultImages)) {
+            $this->deleteImage($btebCourseRoutine->image);
+        }
+
+        $btebCourseRoutine->delete();
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
