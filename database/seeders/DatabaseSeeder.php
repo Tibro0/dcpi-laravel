@@ -34,9 +34,7 @@ class DatabaseSeeder extends Seeder
 
             CustomStaticPageSeeder::class,
 
-            // Controller Not Updated Start
             DiplomaInEngineeringClassRoutineSeeder::class,
-            // Controller Not Updated End
             ShortCourseRoutineSeeder::class,
             BtebCourseRoutineSeeder::class,
             SocialLinkSeeder::class,
